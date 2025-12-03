@@ -1,0 +1,666 @@
+.catalog {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: var(--section-gap);
+
+    @include respond-max($bp-tablet) {
+        padding-top: 36px;
+    }
+
+    .filters-container {
+        width: 100%;
+        position: fixed;
+        top: 237px;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 200;
+
+        &::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgb(0 0 0 / 35%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: auto;
+        }
+
+        @include respond-max($bp-tablet) {
+            top: 160px;
+        }
+
+        @include respond-max($bp-mobile) {
+            top: 70px;
+        }
+
+        .filters {
+            @include container;
+
+            padding-bottom: 20px;
+            background-color: $white;
+            box-shadow: 0 6px 12px -3px rgb(0 0 0 / 25%);
+            position: relative;
+            z-index: 1; 
+
+            &__fieldset {
+                border: 0;
+            }
+
+            &__row {
+                @include flex($justify: flex-start, $align: flex-start, $gap: 26px);
+
+                padding: 22px 10px 35px;
+                border-top: 2px solid $color-primary;
+                border-bottom: 2px solid $color-primary;
+                margin-bottom: 60px;
+
+                @include respond-max($bp-tablet) {
+                    @include flex($align: stretch, $gap: 18px, $direction: column);
+
+                    margin-bottom: 30px;
+                }
+
+                @include respond-max($bp-mobile) {
+                    padding: 22px 10px 26px;
+                }
+            }
+
+            &__control {
+                @include flex($align: flex-start, $gap: 14px, $direction: column);
+
+                border: 0;
+                min-width: 24%;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: 16px;
+                    top: 70%;
+                    transform: translateY(-50%) rotate(45deg);
+                    width: 8px;
+                    height: 8px;
+                    border-right: 2px solid $dark-grey;
+                    border-bottom: 2px solid $dark-grey;
+                    pointer-events: none;
+                }
+
+                &--inline {
+                    &::after {
+                        content: unset;
+                    }
+
+                    @include respond-max($bp-tablet) {
+                        @include flex($justify:flex-start, $gap: 15px, $direction: row);
+                    }
+                }
+
+                @include respond-max($bp-tablet) {
+                    min-width: 100%;
+                }
+            }
+
+            &__label {
+                font-size: 17px;
+                font-weight: 700;
+                color: $dark-grey;
+
+                @include respond-max($bp-mobile) {
+                    font-size: 15px;
+                }
+            }
+
+            &__select {
+                position: relative;
+                width: 100%;
+                padding: 12px 15px;
+                border: 2px solid $light-grey;
+                font-size: 13px;
+                appearance: none;
+                cursor: pointer;
+
+                &--active {
+                    border-color: $color-primary;
+                    box-shadow: 0 6px 6px rgb(194 24 91 / 15%);
+                }
+
+                @include respond-max($bp-mobile) {
+                    font-size: 12px;
+                }
+            }
+
+            
+            &__checkbox-custom {
+                width: 22px;
+                height: 22px;
+                background: #ddd;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 4px;
+
+                &::before {
+                    content: "";
+                    width: 12px;
+                    height: 12px;
+                    background: #000;
+                    border-radius: 50%;
+                    opacity: 0;
+                    transform: scale(0.6);
+                    transition: opacity 0.2s ease, transform 0.2s ease;
+                }
+            }
+
+            &__checkbox-input {
+                position: absolute;
+                opacity: 0;
+                top: 48px;
+                left: -2px;
+                width: 25px;
+                height: 25px;
+                z-index: 10;
+                cursor: pointer;
+
+                @include respond-max($bp-tablet) {
+                    top: 4px;
+                    left: 50px;
+                }
+
+                &:checked + .filters__checkbox-custom::before {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            &__actions {
+                @include flex($justify: flex-start, $gap: 20px);
+
+                padding-left: 10px;
+
+                @include respond-max($bp-tablet) {
+                    padding-left: 0;
+                }
+            }
+
+            &__button {
+                background-color: $color-primary;
+                color: $white;
+                font-size: 15px;
+                font-weight: 700;
+                text-transform: uppercase;
+                padding: 20px 50px;
+                cursor: pointer;
+
+                
+                @include respond-max($bp-tablet) {
+                    padding: 16px 40px;
+                }
+
+                @include respond-max($bp-mobile) {
+                    padding: 14px 36px;
+                }
+
+                @include respond-max($bp-xs) {
+                    width: 85%;
+                    font-size: 14px;
+
+                    @include flex;
+
+                    margin: 0 auto;
+                    padding: 14px 20px;
+                }
+            }
+        }
+    }
+
+    .filters-container.filters-container--open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+
+        @include respond-max($bp-tablet) {
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__container {
+        @include container;
+    }
+
+    &__top-container {
+        @include flex($justify: space-between, $gap: 48px);
+
+        margin-bottom: 35px;
+        font-size: 16px;
+        color: $dark-grey;
+
+        @include respond-max($bp-tablet) {
+            @include flex($align: stretch, $gap: 20px, $direction: column-reverse);
+        }
+
+        @include respond-max($bp-mobile) {
+            margin-bottom: 26px;
+        }
+    }
+
+    &__left-block {
+        @include flex($justify:space-between);
+
+        width: 73%;
+
+        @include respond-max($bp-tablet) {
+            width: 100%;
+
+            @include flex($justify: space-between, $align: flex-end);
+        }
+
+        @include respond-max($bp-mobile) {
+            @include flex($gap: 20px, $direction: column-reverse);
+        }
+    }
+
+    &__right-block {
+        width: 27%;
+
+        @include respond-max($bp-tablet) {
+            width: 100%;
+        }
+    }
+
+    &__filters-block {
+        @include flex($gap: 15px);
+
+        @include respond-max($bp-mobile) {
+            width: 100%;
+        }
+
+        @include respond-max($bp-xs) {
+            @include flex($gap: 8px);
+        }
+    }
+
+    &__results {
+        margin: 0;
+
+        @include respond-max($bp-mobile) {
+            font-size: 14px;
+        }
+
+        @include respond-max($bp-xs) {
+            font-size: 13px;
+        }
+    }
+
+    &__sort {
+        position: relative;
+
+        select {
+            min-width: 190px;
+            padding: 10px 12px;
+            border: 2px solid $light-grey;
+            color: $dark-grey;
+            outline: none;
+            cursor: pointer;
+            line-height: 1;
+            appearance: none;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 12px;
+            top: 48%;
+            transform: translateY(-50%) rotate(45deg);
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid $dark-grey;
+            border-bottom: 2px solid $dark-grey;
+            pointer-events: none;
+        }
+
+        @include respond-max($bp-mobile) {
+            width: 50%;
+
+            select {
+                width: 100%;
+            }
+        }
+
+        @include respond-max($bp-xs) {
+            min-width: fit-content;
+        }
+    }
+
+    &__filters-toggle {
+        display: none;
+        border: 2px solid $light-grey;
+        color: $dark-grey;
+        font-size: 16px;
+        padding: 10px 12px;
+        cursor: pointer;
+        line-height: 1;
+        white-space: nowrap;
+        min-width: 190px;
+
+        @include respond-max($bp-tablet) {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @include respond-max($bp-mobile) {
+            width: 50%;
+        }
+
+        @include respond-max($bp-xs) {
+            min-width: fit-content;
+
+            @include flex;
+
+            margin: 0 auto;
+        }
+    }
+
+    &__search-form {
+        display: block;
+        position: relative;
+
+        input[type="search"] {
+            width: 100%;
+            padding: 10px 14px;
+            border: 2px solid $light-grey;
+            outline: none;
+            line-height: 1.3;
+
+            &::placeholder {
+                color: $dark-grey;
+            }
+
+            &::-webkit-search-cancel-button {
+                appearance: none;
+            }
+        }
+    }
+
+    &__search-button {
+        position: absolute;
+        cursor: pointer;
+
+         &::after {
+            content: "";
+            background-image:  url("/src/assets/images/icons/search-icon.svg");
+            background-repeat: no-repeat;
+            width: 17px;
+            height: 17px;
+            position: absolute;
+            top: 14px;
+            right: 14px;
+        }
+    }
+
+    &__main-block {
+        @include flex($justify: space-between, $align: flex-start, $gap: 48px);
+
+        @include respond-max($bp-tablet) {
+            @include flex($align: stretch, $gap: 40px, $direction: column);
+        }
+    }
+
+    &__products {
+        width: 73%;
+
+        @include respond-max($bp-tablet) {
+            width: 100%;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 35px 12px;
+
+            @include respond-max($bp-mobile) {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 24px 12px;
+            }
+
+            @include respond-max($bp-xs) {
+               gap: 14px 0;
+            }
+
+            .product-card__name {
+                -webkit-line-clamp: 2;
+            }
+        }
+    }
+
+    .catalog-sidebar {
+        width: 27%;
+
+        @include respond-max($bp-tablet) {
+            width: 100%;
+        }
+
+        &__title {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 23px;
+
+            @include respond-max($bp-tablet) {
+                font-size: 20px;
+                margin-bottom: 26px;
+                text-align: center;
+            }
+        }
+
+        &__list {
+            display: grid;
+            gap: 25px;
+
+            @include respond-max($bp-tablet) {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            @include respond-max($bp-mobile) {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            @include respond-max($bp-xs) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sidebar-product {
+            &__inner {
+                display: block;
+            }
+
+            &__link {
+                @include flex($justify: flex-start, $align: flex-start, $gap: 20px);
+            }
+
+            &__media img {
+                display: block;
+                max-width: max-content;
+                width: 86px;
+                height: 86px;
+                object-fit: cover;
+                box-shadow: 0 7px 15px 0 #C1C7D466;
+            }
+
+            &__name {
+                font-size: 15px;
+                font-weight: 400;
+                padding-bottom: 8px;
+                line-height: 1.3;
+
+            }
+
+            .rating {
+                @include flex($justify: flex-start, $gap: 5px);
+
+                .star {
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    background-repeat: no-repeat;
+
+                    &.full {
+                        background-image: url("/src/assets/images/icons/full-star.svg");
+                    }
+
+                    &.empty {
+                        background-image: url("/src/assets/images/icons/empty-star.svg");
+                    }
+                }
+            }
+
+            &__price {
+                font-size: 15px;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .pagination {
+        margin-top: 45px;
+        padding: 0 20px;
+        width: 70%;
+
+        @include flex($justify: space-between);
+
+        @include respond-max($bp-tablet) {
+            width: 100%;
+            padding: 0;
+        }
+
+        @include respond-max($bp-mobile) {
+            @include flex($gap: 20px);
+        }
+
+        &__pages {
+            @include flex($gap: 15px);
+
+            @include respond-max($bp-mobile) {
+                @include flex($gap: 10px);
+            }
+        }
+        
+        &__page {
+            font-size: 15px;
+            font-weight: 500;
+            padding: 10px 17px;
+            line-height: 1.3;
+
+            @include respond-max($bp-mobile) {
+                font-size: 17px;
+            }
+
+            &.active {
+                background-color: $color-primary;
+                color: $white;
+                border-radius: 5px;
+            }
+        }
+
+        &__button {
+            border: 2px solid $color-primary;
+            border-radius: 5px;
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 1;
+            cursor: pointer;
+            text-transform: uppercase;
+
+            &:disabled {
+                opacity: 0;
+            }
+
+            &--prev {
+                padding: 14px 20px;
+
+                span {
+                    margin-right: 10px;
+                }
+            }
+
+             &--next {
+                padding: 14px 20px;
+
+                span {
+                    margin-left: 10px;
+                }
+            }
+
+            @include respond-max($bp-mobile) {
+                font-size: 12px;
+                padding: 12px 18px;
+            }
+
+            @include respond-max($bp-xs) {
+                width: 100%;
+                text-align: center;
+                padding: 12px 8px;
+            }
+        }
+    }
+
+    &-popup {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgb(0 0 0 / 40%);
+        z-index: 999;
+        backdrop-filter: blur(3px);
+
+        &__content {
+            position: relative;
+            background-color:  $white;
+            padding: 60px 80px;
+            width: 100%;
+            max-width: 560px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgb(0 0 0 / 25%), 0 2px 6px rgb(0 0 0 / 15%);
+
+            @include respond-max($bp-xs) {
+                width: 90%;
+                padding: 40px 50px;
+            }
+
+            h2 {
+                font-size: 30px;
+                margin-bottom: 10px;
+
+                @include respond-max($bp-mobile) {
+                    font-size: 24px;
+                }
+
+                @include respond-max($bp-xs) {
+                    font-size: 20px;
+                }
+            }
+
+            button {
+                position: absolute;
+                top: 16px;
+                right: 18px;
+                width: 25px;
+                height: 25px;
+                background-image: url("/src/assets/images/icons/close-icon.svg");
+                background-size: 25px;
+                cursor: pointer;
+            }
+        }
+
+        &[hidden] { 
+            display: none; 
+        }
+    }
+}

@@ -1,0 +1,42 @@
+// Color variables
+$white: #fff;
+$black: #000;
+$color-primary: #B92770;
+$grey: #727174;
+$hero-grey: #E7E8E9;
+$dark-grey: #504E4A;
+$light-grey: #E9E9ED;
+$success-green: green;
+$warning-red: red;
+
+// Breakpoints
+$bp-xs: 544px;
+$bp-mobile: 768px;
+$bp-tablet: 1024px;
+$bp-desktop: 1440px;
+
+:root {
+    --section-gap: 120px;
+    --product-card-min-height: 400px;
+}
+
+@include respond-max($bp-tablet) {
+    :root {
+        --section-gap: 100px;
+        --product-card-min-height: 320px;
+    }
+}
+
+@include respond-max($bp-mobile) {
+    :root {
+        --section-gap: 80px;
+        --product-card-min-height: 260px;
+    }
+}
+
+@include respond-max($bp-xs) {
+    :root {
+        --section-gap: 60px;
+        --product-card-min-height: 220px;
+    }
+}

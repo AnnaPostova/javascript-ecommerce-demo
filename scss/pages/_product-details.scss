@@ -1,0 +1,1000 @@
+.pdp {
+    margin-top: 55px !important;
+
+    @include container;
+
+    margin-bottom: var(--section-gap);
+
+    @include respond-max($bp-mobile) {
+        margin-top: 30px !important;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 42px;
+        align-items: start;
+        margin-bottom: 80px;
+
+        @include respond-max($bp-tablet) {
+            grid-template-columns: 1fr;
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        @include respond-max($bp-mobile) {
+            gap: 28px;
+            margin-bottom: 50px;
+        }
+
+        @include respond-max($bp-xs) {
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__images {
+        @include flex($direction: column, $gap: 10px);
+
+        @include respond-max($bp-tablet) {
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        @include respond-max($bp-xs) {
+            width: 100%;
+        }
+    }
+
+    &__image-main {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+
+        @include flex;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__thumbnails {
+        @include flex($gap: 15px);
+
+        li {
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        @include respond-max($bp-tablet) {
+            justify-content: flex-start;
+            flex-wrap: wrap;
+
+            li {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        @include respond-max($bp-mobile) {
+            justify-content: center;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding-bottom: 6px;
+
+            li {
+                width: 90px;
+                height: 90px;
+                flex: 0 0 auto;
+            }
+        }
+
+        @include respond-max($bp-xs) {
+            gap: 10px;
+
+            li {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 12px;
+
+        @include respond-max($bp-tablet) {
+            font-size: 26px;
+        }
+
+        @include respond-max($bp-mobile) {
+            font-size: 24px;
+        }
+
+        @include respond-max($bp-xs) {
+            font-size: 22px;
+        }
+    }
+
+    &__rating {
+        @include flex($justify: flex-start, $gap: 15px);
+
+        margin-bottom: 10px;
+        font-size: 13px;
+        color: $dark-grey;
+
+        @include respond-max($bp-tablet) {
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        @include respond-max($bp-mobile) {
+            font-size: 12px;
+        }
+
+        @include respond-max($bp-xs) {
+            font-size: 11px;
+        }
+    }
+
+    .stars {
+        @include flex($gap: 5px);
+
+        .pdp-star {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-size: 16px;
+            background-repeat: no-repeat;
+
+            &--full {
+                background-image: url("/src/assets/images/icons/full-star.svg");
+            }
+
+            &--empty {
+                background-image: url("/src/assets/images/icons/empty-star.svg");
+            }
+        }
+
+        @include respond-max($bp-mobile) {
+            .pdp-star {
+                width: 14px;
+                height: 14px;
+                background-size: 14px;
+            }
+        }
+
+        @include respond-max($bp-xs) {
+            .pdp-star {
+                width: 12px;
+                height: 12px;
+                background-size: 12px;
+            }
+        }
+    }
+
+    &__price {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 30px;
+
+        @include respond-max($bp-tablet) {
+            margin-bottom: 24px;
+        }
+
+        @include respond-max($bp-mobile) {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        @include respond-max($bp-xs) {
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+    }
+
+    &__short-description {
+        font-size: 17px;
+        color: $dark-grey;
+        margin-bottom: 30px;
+
+        p:first-child {
+            margin-bottom: 26px;
+        }
+
+         @include respond-max($bp-tablet) {
+            font-size: 16px;
+            margin-bottom: 26px;
+
+            p:first-child {
+                margin-bottom: 20px;
+            }
+        }
+
+        @include respond-max($bp-mobile) {
+            font-size: 15px;
+        }
+
+        @include respond-max($bp-xs) {
+            font-size: 14px;
+        }
+    }
+
+    &__options {
+        margin-bottom: 50px;
+
+        @include respond-max($bp-tablet) {
+            margin-bottom: 40px;
+        }
+
+        @include respond-max($bp-mobile) {
+            margin-bottom: 32px;
+        }
+
+        @include respond-max($bp-xs) {
+            margin-bottom: 28px;
+        }
+    }
+
+    &__options-fieldset {
+        border: 0;
+
+        @include flex($align: flex-start, $direction: column, $gap: 30px);
+
+        margin-bottom: 70px;
+
+        @include respond-max($bp-tablet) {
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+
+        @include respond-max($bp-mobile) {
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        @include respond-max($bp-xs) {
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__control {
+        width: 100%;
+
+        @include flex($align: flex-start, $direction: column, $gap: 12px);
+
+        label {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid $light-grey;
+            font-size: 13px;
+            cursor: pointer;
+            color: $dark-grey;
+        }
+
+        @include respond-max($bp-tablet) {
+            label {
+                font-size: 16px;
+            }
+
+            select {
+                font-size: 13px;
+                padding: 11px 14px;
+            }
+        }
+
+        @include respond-max($bp-mobile) {
+            label {
+                font-size: 15px;
+            }
+
+            select {
+                font-size: 13px;
+                padding: 10px 12px;
+            }
+        }
+
+        @include respond-max($bp-xs) {
+            label {
+                font-size: 14px;
+            }
+
+            select {
+                font-size: 12px;
+                padding: 9px 10px;
+            }
+        }
+    }
+
+    &__actions {
+        @include flex($justify: flex-start, $gap: 12px);
+
+        @include respond-max($bp-tablet) {
+            gap: 10px;
+        }
+    }
+
+    &__quantity {
+        @include flex;
+
+        border: 2px solid $color-primary;
+        width: max-content;
+        overflow: hidden;
+        font-size: 25px;
+        font-weight: 700;
+
+        @include respond-max($bp-tablet) {
+            font-size: 22px;
+        }
+
+        @include respond-max($bp-mobile) {
+            font-size: 20px;
+        }
+
+        @include respond-max($bp-xs) {
+            font-size: 18px;
+        }
+    }
+
+    &__quantity-btn {
+        font-size: 26px;
+        width: 60px;
+        height: 54px;
+
+        @include flex;
+
+        cursor: pointer;
+        user-select: none;
+        color: $grey;
+
+        @include respond-max($bp-xs) {
+            width: 50px;
+            height: 46px;
+        }
+    }
+
+    &__quantity-input {
+        width: 30px;
+        height: 50px;
+        border: none;
+        text-align: center;
+        color: $grey;
+
+        &:focus {
+            outline: none;
+        }
+
+        @include respond-max($bp-xs) {
+            height: 38px;
+            width: 36px;
+        }
+    }
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        appearance: none;
+        margin: 0;
+    }
+
+    input[type="number"] {
+        appearance: textfield;
+    }
+
+    &__add-to-cart {
+        width: 100%;
+        padding: 16px 0;
+
+        @include respond-max($bp-tablet) {
+            padding: 14px 0;
+        }
+
+        @include respond-max($bp-xs) {
+            padding: 12px 0;
+        }
+    }
+
+    &__payments {
+        @include flex($justify: flex-start, $gap: 20px);
+
+        span {
+            font-size: 23px;
+            font-weight: 700;
+            color: $grey;
+        }
+
+        span img {
+            padding: 0 5px;
+        }
+
+        @include respond-max($bp-tablet) {
+            span {
+                font-size: 20px;
+            }
+        }
+
+        @include respond-max($bp-mobile) {
+            flex-wrap: wrap;
+            gap: 14px;
+
+            span {
+                font-size: 18px;
+            }
+        }
+
+        @include respond-max($bp-xs) {
+            @include flex($gap: 10px);
+
+            span {
+                &:first-child {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &-tabs {
+        margin-bottom: 100px;
+
+        @include respond-max($bp-tablet) {
+            margin-bottom: 80px;
+        }
+
+        @include respond-max($bp-mobile) {
+            margin-bottom: 60px;
+        }
+
+        @include respond-max($bp-xs) {
+            margin-bottom: 40px;
+        }
+
+        &__nav {
+            @include flex($gap: 120px);
+
+            margin-bottom: 30px;
+
+            @include respond-max($bp-mobile) {
+                @include flex($justify: space-between);
+
+                padding: 0 30px 5px;
+            }
+
+            @include respond-max($bp-xs) {
+                padding: 0 10px 5px;
+            }
+        }
+
+        &__btn {
+            font-size: 17px;
+            font-weight: 700;
+            padding-bottom: 6px;
+            cursor: pointer;
+            text-transform: uppercase;
+            position: relative;
+
+            @include respond-max($bp-tablet) {
+                font-size: 16px;
+                padding-bottom: 5px;
+            }
+
+            @include respond-max($bp-mobile) {
+                font-size: 15px;
+                padding-bottom: 4px;
+                white-space: nowrap;
+            }
+
+            @include respond-max($bp-xs) {
+                font-size: 14px;
+            }
+
+            &--active {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 2.5px;
+                    background: $color-primary;
+                }
+            }
+        }
+
+        &__panel {
+            display: none;
+            color: $dark-grey;
+            font-size: 17px;
+
+            @include respond-max($bp-tablet) {
+                font-size: 16px;
+            }
+
+            @include respond-max($bp-mobile) {
+                font-size: 15px;
+            }
+
+            @include respond-max($bp-xs) {
+                font-size: 14px;
+            }
+
+            &--active {
+                display: block;
+            }
+
+            /* stylelint-disable-next-line no-descending-specificity */
+            > div p {
+                margin-bottom: 30px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                @include respond-max($bp-mobile) {
+                    margin-bottom: 20px;
+                }
+
+                @include respond-max($bp-xs) {
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+
+    &-reviews {
+        &__container {
+            @include flex($justify: space-between, $align: flex-start);
+
+            @include respond-max($bp-tablet) {
+                @include flex($direction: column, $gap: 40px);
+            }
+
+            @include respond-max($bp-mobile) {
+                gap: 30px;
+            }
+        }
+
+        &__list {
+            width: 100%;
+            max-width: 42%;
+
+            @include respond-max($bp-tablet) {
+                max-width: 100%;
+                border-bottom: 1px solid $color-primary;
+                padding-bottom: 15px;
+            }
+        }
+
+        &__form {
+            width: 100%;
+            max-width: 48%;
+
+            @include respond-max($bp-tablet) {
+                max-width: 100%;
+            }
+        }
+
+        &__heading {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 92px;
+
+            @include respond-max($bp-tablet) {
+                margin-bottom: 50px;
+            }
+
+            @include respond-max($bp-mobile) {
+                margin-bottom: 32px;
+                font-size: 16px;
+            }
+
+            @include respond-max($bp-xs) {
+                margin-bottom: 24px;
+                font-size: 15px;
+            }
+        }
+
+        &__form-heading {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 20px;
+
+            @include respond-max($bp-tablet) {
+                font-size: 18px;
+                margin-bottom: 16px;
+            }
+        }
+
+        &__note {
+            font-size: 13px;
+            margin-bottom: 30px;
+
+            @include respond-max($bp-mobile) {
+                margin-bottom: 24px;
+            }
+
+            @include respond-max($bp-xs) {
+                font-size: 12px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    &-review {
+        @include flex($justify: flex-start, $align: flex-start, $gap: 25px);
+
+        @include respond-max($bp-tablet) {
+            gap: 20px;
+        }
+
+        @include respond-max($bp-mobile) {
+            @include flex($direction: row, $align: flex-start, $gap: 16px);
+        }
+
+        @include respond-max($bp-xs) {
+            @include flex($direction: column, $align: flex-start, $gap: 12px);
+        }
+
+        &__author-photo {
+            width: 24%;
+
+            @include respond-max($bp-tablet) {
+                width: 12%;
+            }
+
+            @include respond-max($bp-mobile) {
+                width: 64px;
+            }
+
+            @include respond-max($bp-xs) {
+                width: 56px;
+            }
+        }
+
+        &__avatar {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        &__block {
+            @include flex($justify: space-between);
+
+            margin-bottom: 30px;
+
+            @include respond-max($bp-mobile) {
+                @include flex($align: flex-start, $gap: 8px, $direction: column);
+
+                margin-bottom: 20px;
+            }
+
+            @include respond-max($bp-xs) {
+                margin-bottom: 16px;
+            }
+        }
+
+        &__author {
+           @include flex($justify: flex-start, $gap: 18px);
+
+           @include respond-max($bp-mobile) {
+                gap: 12px;
+            }
+
+            @include respond-max($bp-xs) {
+                gap: 8px;
+            }
+        }
+
+        &__name {
+            font-size: 17px;
+            font-weight: 700;
+            color: $dark-grey;
+
+            @include respond-max($bp-mobile) {
+                font-size: 16px;
+            }
+
+            @include respond-max($bp-xs) {
+                font-size: 15px;
+            }
+        }
+
+        &__date {
+            font-size: 13px;
+            color: $grey;
+
+            @include respond-max($bp-xs) {
+                font-size: 12px;
+            }
+        }
+
+        &__rating {
+            color: #ffb400;
+            font-size: 16px;
+            white-space: nowrap;
+
+            @include respond-max($bp-mobile) {
+                font-size: 15px;
+            }
+
+            @include respond-max($bp-xs) {
+                font-size: 14px;
+            }
+        }
+
+        &__text {
+            font-size: 17px;
+
+            @include respond-max($bp-tablet) {
+                font-size: 16px;
+            }
+
+            @include respond-max($bp-mobile) {
+                font-size: 15px;
+            }
+
+            @include respond-max($bp-xs) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .review-form {
+        &__fieldset {
+            @include flex($justify: flex-start, $gap: 16px);
+
+            border: none;
+            margin-bottom: 30px;
+
+            @include respond-max($bp-tablet) {
+                gap: 12px;
+            }
+
+            @include respond-max($bp-mobile) {
+                margin-bottom: 24px;
+            }
+
+            @include respond-max($bp-xs) {
+                margin-bottom: 20px;
+            }
+
+            .rating {
+                display: inline-flex;
+                flex-direction: row-reverse;
+                gap: 8px;
+
+                &__input {
+                    display: none;
+                }
+
+                &__label {
+                    font-size: 20px;
+                    cursor: pointer;
+                    color: #ddd;
+                    transition: color 0.15s ease;
+                }
+
+                &__label:hover,
+                &__label:hover ~ .rating__label {
+                    color: #ffb400;
+                }
+
+                &__input:checked ~ .rating__label {
+                    color: #ffb400;
+                }
+            }
+        }
+
+        &__title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            @include respond-max($bp-xs) {
+                font-size: 12px;
+            }
+        }
+
+        &__group {
+            position: relative;
+            width: 100%;
+
+            &--full {
+                margin-bottom: 15px;
+            }
+
+            &--checkbox {
+                margin-top: 4px;
+
+                @include respond-max($bp-mobile) {
+                    margin-top: 8px;
+                }
+            }
+        }
+
+        &__row {
+            @include flex($justify: flex-start, $gap: 20px);
+
+            margin-bottom: 32px;
+
+            @include respond-max($bp-tablet) {
+                gap: 16px;
+            }
+
+            @include respond-max($bp-mobile) {
+                @include flex($direction: column, $gap: 16px);
+
+                margin-bottom: 24px;
+            }
+
+            @include respond-max($bp-xs) {
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+        }
+
+        &__label {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 14px;
+            font-weight: 500;
+
+            @include respond-max($bp-mobile) {
+                font-size: 13px;
+                top: 13px;
+                left: 13px;
+            }
+
+            @include respond-max($bp-xs) {
+                font-size: 12px;
+            }
+
+            &--hidden {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        &__textarea {
+            min-height: 140px;
+            font-size: 14px;
+
+            @include respond-max($bp-mobile) {
+                min-height: 120px;
+            }
+
+            @include respond-max($bp-xs) {
+                font-size: 13px;
+            }
+        }
+
+        &__checkbox-label {
+            @include flex($justify: flex-start, $gap: 15px);
+
+            font-size: 13px;
+            color: $grey;
+            cursor: pointer;
+            position: relative;
+
+            @include respond-max($bp-xs) {
+                font-size: 12px;
+                gap: 10px;
+            }
+        }
+
+        &__checkbox-input {
+            position: absolute;
+            opacity: 0;
+            left: 3px;
+        }
+
+        &__checkbox-box {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #c0c0c0;
+            border-radius: 2px;
+            box-sizing: border-box;
+            position: relative;
+
+            @include respond-max($bp-xs) {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        .review-form__checkbox-input:checked + .review-form__checkbox-box::after {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 0;
+            width: 6px;
+            height: 11px;
+            border-right: 2px solid $color-primary;
+            border-bottom: 2px solid $color-primary;
+            transform: rotate(45deg);
+
+            @include respond-max($bp-xs) {
+                left: 3px;
+                width: 5px;
+                height: 9px;
+            }
+        }
+
+        &__message {
+            min-height: 18px;
+            font-size: 13px;
+            margin: 8px 0;
+            color: $success-green;
+
+            @include respond-max($bp-xs) {
+                font-size: 12px;
+            }
+        }
+
+        &__message--error {
+            color: $warning-red;
+        }
+
+        &__submit {
+            padding: 12px 21px;
+            font-size: 12px;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            @include respond-max($bp-mobile) {
+                padding: 11px 18px;
+                font-size: 11px;
+            }
+
+            @include respond-max($bp-xs) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        &__error {
+            display: none;
+
+            &.visible {
+                display: block;
+            }
+        }
+    }
+
+    &-recommendations {
+        &__title {
+            position: relative;
+            font-size: 30px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            width: fit-content;
+            margin: 0 auto 60px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 2.5px;
+                background: $color-primary;
+            }
+        }
+    }
+}

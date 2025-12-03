@@ -1,0 +1,65 @@
+@mixin container($max-width: 1300px, $padding: 0 20px, $margin: 0 auto) {
+    width: 100%;
+    max-width: $max-width;
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin flex($align: center, $justify: center, $wrap: nowrap, $gap: 0, $direction: row) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+    gap: $gap;
+    flex-direction: $direction;
+}
+
+@mixin heading($size: 40px, $weight: 900, $color: $black, $margin-bottom: 10px) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    margin-bottom: $margin-bottom;
+
+    @include respond-max($bp-tablet) {
+        font-size: calc(#{$size} * 0.88);
+        margin-bottom: calc(#{$margin-bottom} * 0.88);
+    }
+
+    @include respond-max($bp-mobile) {
+        font-size: calc(#{$size} * 0.78);
+        margin-bottom: calc(#{$margin-bottom} * 0.78);
+    }
+
+    @include respond-max($bp-xs) {
+        font-size: calc(#{$size} * 0.68);
+        margin-bottom: calc(#{$margin-bottom} * 0.68);
+    }
+}
+
+@mixin sub-heading($size: 17px, $weight: 400, $color: $dark-grey, $margin-bottom: 60px) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    margin-bottom: $margin-bottom;
+
+    @include respond-max($bp-tablet) {
+        font-size: calc(#{$size} * 0.9);
+        margin-bottom: calc(#{$margin-bottom} * 0.9);
+    }
+
+    @include respond-max($bp-mobile) {
+        font-size: calc(#{$size} * 0.8);
+        margin-bottom: calc(#{$margin-bottom} * 0.75);
+    }
+
+    @include respond-max($bp-xs) {
+        font-size: calc(#{$size} * 0.7);
+        margin-bottom: calc(#{$margin-bottom} * 0.6);
+    }
+}
+
+@mixin respond-max($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}

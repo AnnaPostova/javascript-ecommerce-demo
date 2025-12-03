@@ -1,0 +1,295 @@
+.footer {
+    overflow: hidden;
+    margin-bottom: 46px;
+
+    .benefits {
+        position: relative;
+        padding: 38px 0;
+        margin-bottom: var(--section-gap);
+        overflow: hidden; 
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("/src/assets/images/footer/benefits-bg.png");
+            background-repeat: no-repeat;
+            background-size: 100% 450px;
+            background-position: right bottom -20px;
+            z-index: -1;
+        }
+
+        @include respond-max($bp-tablet) {
+            &::before {
+                background-size: 140% 380px;
+                background-position: center bottom;
+            }
+        }
+
+        @include respond-max($bp-mobile) {
+            &::before {
+                background-size: 200% 340px;
+                background-position: center bottom;
+                background-repeat: inherit;
+            }
+        }
+
+        @include respond-max($bp-xs) {
+            &::before {
+                background-size: 260% 320px;
+                background-position: center bottom;
+            }
+        }
+
+        &__container {
+            @include container;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        &__title {
+            font-size: 18px;
+            font-weight: 700;
+            color: $white;
+
+            @include respond-max($bp-mobile) {
+                font-size: 17px;
+            }
+
+            @include respond-max($bp-xs) {
+                text-align: center;
+            }
+        }
+
+        &__list {
+            margin-top: 32px;
+
+            @include flex($justify: space-between);
+
+            @include respond-max($bp-tablet) {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 24px 32px;
+            }
+
+            @include respond-max($bp-mobile) {
+                gap: 20px;
+            }
+        }
+
+        &__item {
+            width: 22%;
+
+            @include flex($gap: 20px);
+
+            img {
+                flex-shrink: 0;
+            }
+
+            p {
+                font-weight: 500;
+                color: $white;
+            }
+
+            @include respond-max($bp-tablet) {
+                width: calc(50% - 24px);
+            }
+
+            @include respond-max($bp-mobile) {
+                width: 48%;
+
+                @include flex($direction: row, $align: flex-start, $gap: 16px);
+
+                p {
+                    font-size: 14px;
+                }
+            }
+
+            @include respond-max($bp-xs) {
+                width: 80%;
+
+                @include flex($direction: column, $align: center, $gap: 10px);
+
+                text-align: center;
+
+                p {
+                    font-size: 16px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    &__content {
+        @include container;
+
+        margin: 0 auto 110px;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(224px, 2.8fr)) minmax(260px, 2fr);
+        column-gap: 3rem;
+        align-items: flex-start;
+        font-size: 15px;
+
+        @include respond-max($bp-tablet) {
+            grid-template-columns: 1.4fr 1fr;
+            column-gap: 2rem;
+            margin-bottom: 90px;
+        }
+
+        @include respond-max($bp-mobile) {
+            grid-template-columns: 1fr;
+            row-gap: 40px;
+            margin-bottom: 70px;
+            text-align: center;
+        }
+
+        @include respond-max($bp-xs) {
+            margin-bottom: 50px;
+            row-gap: 32px;
+            text-align: center;
+        }
+    }
+
+    &__links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        @include respond-max($bp-tablet) {
+            column-gap: 1.5rem;
+        }
+
+        @include respond-max($bp-mobile) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 1.25rem;
+        }
+
+        @include respond-max($bp-xs) {
+            grid-template-columns: 1fr;
+            column-gap: 0;
+        }
+    }
+
+    &__first-container {
+        width: 85%;
+
+        @include respond-max($bp-tablet) {
+            width: 100%;
+        }
+    }
+
+    a {
+        &:focus-visible {
+            outline: 2px solid $color-primary;
+            outline-offset: 2px;
+        }
+    }
+
+    &__block {
+        ul {
+            li {
+                margin-bottom: 12px;
+
+                a {
+                    &:hover {
+                        color: $color-primary;
+                    }
+                }
+            }
+        }
+
+        .footer__title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 24px;
+
+            @include respond-max($bp-mobile) {
+                font-size: 15px;
+                margin-bottom: 18px;
+            }
+
+            a {
+                &:hover {
+                    color: $color-primary;
+                }
+            }
+        }
+
+        &--shipping-info {
+            grid-column: 1 / 4;
+            margin-top: 38px;
+
+            @include respond-max($bp-mobile) {
+                grid-column: 1 / 3;
+            }
+
+            @include respond-max($bp-xs) {
+                grid-column: 1 / 2;
+                margin-top: 24px;
+            }
+        }
+    }
+
+    &__second-container {
+         @include respond-max($bp-mobile) {
+            margin-top: 10px;
+        }
+
+        .contacts {
+            @include flex($justify: space-between, $wrap: wrap, $gap: 30px 18px);
+
+            margin-top: 50px;
+
+            @include respond-max($bp-mobile) {
+                margin-top: 32px;
+                gap: 20px 12px;
+            }
+
+            @include respond-max($bp-xs) {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            li {
+                @include flex($justify: flex-start, $gap: 10px);
+
+                width: 47%;
+
+                @include respond-max($bp-mobile) {
+                    justify-content: center;
+                }
+
+                @include respond-max($bp-xs) {
+                    width: 100%;
+                }
+
+                a {
+                    @include flex($justify: flex-start, $gap: 10px);
+
+                    &:hover {
+                        color: $color-primary;
+                    }
+                }
+
+                img {
+                    flex-shrink: 0;
+                }
+            }
+        }
+    }
+
+    &__copyright {
+        text-align: center;
+        font-size: 14px;
+        color: $grey;
+
+        @include respond-max($bp-mobile) {
+            font-size: 13px;
+            padding: 12px 0;
+        }
+
+        @include respond-max($bp-xs) {
+            font-size: 12px;
+        }
+    }
+}

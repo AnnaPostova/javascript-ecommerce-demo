@@ -1,0 +1,376 @@
+.page-hero {
+    position: relative;
+    padding: 215px 0;
+    margin-bottom: calc(var(--section-gap) + 10px);
+
+    @include respond-max($bp-tablet) {
+        padding: 150px 0;
+    }
+
+    @include respond-max($bp-xs) {
+        padding: 120px 0;
+    }
+
+    &__container {
+        text-align: center;
+        color: $white;
+        max-width: 465px;
+        margin: 0 auto;
+
+        @include respond-max($bp-mobile) {
+            max-width: 380px;
+        }
+
+        @include respond-max($bp-xs) {
+            max-width: 320px;
+        }
+    }
+
+    &--about {
+        background: linear-gradient(rgb(0 0 0 / 40%), rgb(0 0 0 / 40%)),
+        url("/src/assets/images/about/main-banner.jpg") center/cover no-repeat;
+    }
+
+    &--contact {
+        background: linear-gradient(rgb(0 0 0 / 40%), rgb(0 0 0 / 40%)),
+    url("/src/assets/images/contact/main-banner.jpg") center/cover no-repeat;
+    }
+
+    h1 {
+        font-size: 50px;
+        font-weight: 700;
+        margin-bottom: 20px;
+
+        @include respond-max($bp-tablet) {
+            font-size: 42px;
+        }
+
+        @include respond-max($bp-mobile) {
+            font-size: 34px;
+        }
+    }
+
+    p {
+        font-size: 17px;
+
+        @include respond-max($bp-tablet) {
+            font-size: 16px;
+        }
+
+        @include respond-max($bp-mobile) {
+            font-size: 15px;
+        }
+    }
+}
+
+.info-grid {
+    @include container;
+
+    text-align: center;
+    margin-bottom: calc(var(--section-gap) + 10px);
+
+    @include respond-max($bp-tablet) {
+        margin-bottom: var(--section-gap);
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 88px;
+        justify-content: space-between;
+
+        @include respond-max($bp-tablet) {
+            gap: 64px;
+        }
+
+        @include respond-max($bp-mobile) {
+            gap: 48px;
+            justify-content: center;
+        }
+
+        @include respond-max($bp-xs) {
+            gap: 32px;
+        }
+    }
+
+    &__item {
+        @include flex($direction: column, $gap: 22px);
+
+        margin: 0 auto;
+        max-width: 95%;
+
+        @include respond-max($bp-mobile) {
+            max-width: 100%;
+        }
+
+        @include respond-max($bp-xs) {
+            @include flex($direction: column, $gap: 18px);
+        }
+    }
+
+    &__heading {
+        font-size: 20px;
+        font-weight: 700;
+
+        @include respond-max($bp-tablet) {
+            font-size: 19px;
+        }
+
+        @include respond-max($bp-mobile) {
+            font-size: 18px;
+        }
+
+        @include respond-max($bp-xs) {
+            font-size: 17px;
+        }
+    }
+
+    &__info {
+        font-size: 17px;
+
+        @include respond-max($bp-tablet) {
+            font-size: 16px;
+        }
+
+        @include respond-max($bp-mobile) {
+            font-size: 15px;
+        }
+
+        @include respond-max($bp-xs) {
+            font-size: 14px;
+        }
+    }
+}
+
+.arrivals {
+    margin-bottom: calc(var(--section-gap) + 10px);
+
+    @include respond-max($bp-tablet) {
+        margin-bottom: var(--section-gap);
+    }
+
+    &__container {
+        @include container;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+        justify-content: space-between;
+        grid-template-areas: 
+        "text image";
+
+        @include respond-max($bp-tablet) {
+            grid-template-columns: 1fr;
+            gap: 40px;
+            grid-template-areas:
+            "image"
+            "text";
+        }
+
+        @include respond-max($bp-mobile) {
+            gap: 32px;
+        }
+
+        @include respond-max($bp-xs) {
+            gap: 24px;
+        }
+    }
+
+    &__block {
+        grid-area: text;
+
+        @include respond-max($bp-tablet) {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        @include respond-max($bp-mobile) {
+            max-width: 500px;
+        }
+
+        @include respond-max($bp-xs) {
+            max-width: 420px;
+        }
+    }
+
+    &__title {
+        @include heading($margin-bottom: 30px);
+    }
+
+    &__text {
+        @include sub-heading($color: $dark-grey, $margin-bottom: 30px);
+
+        line-height: 1.5;
+    }
+
+    &__button {
+        display: inline-block;
+        padding: 18px 30px;
+
+        @include respond-max($bp-tablet) {
+            margin: 0 auto;
+        }
+
+        @include respond-max($bp-xs) {
+            padding: 16px 26px;
+            font-size: 15px;
+        }
+    }
+
+    &__image {
+        margin-left: 38px;
+        height: auto;
+        grid-area: image;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        @include respond-max($bp-tablet) {
+            margin-left: 0;
+        }
+    }
+}
+
+.our-team {
+    text-align: center;
+    margin-bottom: calc(var(--section-gap) + 50px);
+
+    @include respond-max($bp-tablet) {
+        margin-bottom: calc(var(--section-gap) + 20px);
+    }
+
+    @include respond-max($bp-mobile) {
+        margin-bottom: var(--section-gap);
+    }
+
+    &__container {
+        @include container;
+
+        @include respond-max($bp-tablet) {
+            max-width: 90%;
+        }
+
+        @include respond-max($bp-mobile) {
+            max-width: 95%;
+        }
+
+        @include respond-max($bp-xs) {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        @include heading;
+
+        width: fit-content;
+        margin: 0 auto 60px;
+
+        @include respond-max($bp-tablet) {
+            margin: 0 auto 50px;
+        }
+
+        @include respond-max($bp-mobile) {
+            margin: 0 auto 40px;
+        }
+
+        @include respond-max($bp-xs) {
+            margin: 0 auto 30px;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: $color-primary;
+            margin: 10px auto 0;
+
+            @include respond-max($bp-mobile) {
+                margin-top: 8px;
+            }
+
+            @include respond-max($bp-xs) {
+                margin-top: 6px;
+            }
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 35px;
+        align-items: start;
+        justify-content: space-between;
+
+        @include respond-max($bp-tablet) {
+            gap: 30px;
+            justify-content: center;
+        }
+
+        @include respond-max($bp-mobile) {
+            gap: 26px;
+            max-width: 95%;
+            margin: 0 auto;
+        }
+
+        @include respond-max($bp-xs) {
+            max-width: 90%;
+        }
+    }
+
+    &__member {
+        &-photo {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            object-fit: cover;
+            margin-bottom: 30px;
+
+            @include respond-max($bp-tablet) {
+                margin-bottom: 26px;
+            }
+
+            @include respond-max($bp-mobile) {
+                margin-bottom: 22px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &-name {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+
+            @include respond-max($bp-tablet) {
+                font-size: 21px;
+                margin-bottom: 22px;
+            }
+
+            @include respond-max($bp-mobile) {
+                font-size: 19px;
+                margin-bottom: 4px;
+            }
+        }
+
+        &-role {
+            font-size: 17px;
+
+            @include respond-max($bp-tablet) {
+                font-size: 16px;
+            }
+
+            @include respond-max($bp-mobile) {
+                font-size: 15px;
+            }
+        }
+    }
+}
