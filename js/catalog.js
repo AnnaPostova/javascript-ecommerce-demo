@@ -1,4 +1,14 @@
 (function () {
+    function getBasePrefix() {
+    const isGh = location.hostname.endsWith('github.io');
+    if (!isGh) return '';
+    const [, repo] = location.pathname.split('/');
+    return repo ? `/${repo}/` : '/';
+    }
+    const BASE = getBasePrefix();
+    const pathTo = (p) => `${BASE}${String(p).replace(/^\/+/, '')}`.replace(/\/{2,}/g, '/');
+    const clean = (p) => String(p || '').replace(/^\.?\//, '');
+
     const PER_PAGE = 12;
 
     let allProducts = [];
@@ -137,10 +147,10 @@
 
             li.innerHTML = `
                 <article class="product-card">
-                    <a href="../html/product-details.html?id=${product.id}" class="product-card__link">
+                    <a href="${pathTo(`html/product-details.html?id=${product.id}`)}" class="product-card__link">
                         ${isOnSale ? "<p class='product-card__tag'>Sale</p>" : ""}
                         <figure class="product-card__image">
-                            <img src="${product.imageUrl}" alt="${product.name}" loading="lazy" width="300" height="360">
+                            <img src="${pathTo(clean(product.imageUrl))}" alt="${product.name}" loading="lazy" width="300" height="360">
                         </figure>
                         <div class="product-card__description">
                             <h3 class="product-card__name">
@@ -220,7 +230,7 @@
                         class="sidebar-product__link"
                         aria-label="${product.name}">
                         <figure class="sidebar-product__media">
-                            <img src="${product.imageUrl}" alt="${product.name}" loading="lazy" width="64" height="64">
+                            <img src="${pathTo(clean(product.imageUrl))}" alt="${product.name}" loading="lazy" width="64" height="64">
                         </figure>
                         <div class="sidebar-product__content">
                             <h3 class="sidebar-product__name">
@@ -321,7 +331,7 @@
         }
 
         const productId = encodeURIComponent(foundProduct.id);
-        window.location.href = `../html/product-details.html?id=${productId}`;
+        window.location.href = pathTo(`html/product-details.html?id=${productId}`);
     }
 
     // ===== Init functions =====
@@ -538,7 +548,7 @@
 
         cacheDomElements();
 
-        fetch("../assets/data.json")
+        fetch(pathTo("assets/data.json"))
             .then((res) => res.json())
             .then((json) => {
                 const products = Array.isArray(json) ? json : json.data || [];
