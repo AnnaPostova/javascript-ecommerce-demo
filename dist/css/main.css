@@ -26,35 +26,35 @@
   font-family: Montserrat;
   font-style: normal;
   font-weight: 400;
-  src: url("/src/assets/fonts/montserrat-v31-latin-regular.woff2") format("woff2");
+  src: url("assets/fonts/montserrat-v31-latin-regular.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
-  src: url("/src/assets/fonts/montserrat-v31-latin-500.woff2") format("woff2");
+  src: url("assets/fonts/montserrat-v31-latin-500.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 600;
-  src: url("/src/assets/fonts/montserrat-v31-latin-600.woff2") format("woff2");
+  src: url("assets/fonts/montserrat-v31-latin-600.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 700;
-  src: url("/src/assets/fonts/montserrat-v31-latin-700.woff2") format("woff2");
+  src: url("assets/fonts/montserrat-v31-latin-700.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 900;
-  src: url("/src/assets/fonts/montserrat-v31-latin-900.woff2") format("woff2");
+  src: url("assets/fonts/montserrat-v31-latin-900.woff2") format("woff2");
 }
 *,
 *::before,
@@ -458,7 +458,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   right: 12px;
   top: 32%;
-  background: url("/src/assets/images/icons/eye-icon.svg") no-repeat center;
+  background: url("assets/images/icons/eye-icon.svg") no-repeat center;
   background-size: 22px;
   width: 24px;
   height: 18px;
@@ -1013,7 +1013,7 @@ body[data-page=catalog] .navigation__item--has-dropdown::after {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/src/assets/images/footer/benefits-bg.png");
+  background-image: url("assets/images/footer/benefits-bg.png");
   background-repeat: no-repeat;
   background-size: 100% 450px;
   background-position: right bottom -20px;
@@ -1343,10 +1343,10 @@ body[data-page=catalog] .navigation__item--has-dropdown::after {
   }
 }
 .page-hero--about {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/assets/images/about/main-banner.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("assets/images/about/main-banner.jpg") center/cover no-repeat;
 }
 .page-hero--contact {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/assets/images/contact/main-banner.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("assets/images/contact/main-banner.jpg") center/cover no-repeat;
 }
 .page-hero h1 {
   font-size: 50px;
@@ -1791,7 +1791,7 @@ body[data-page=catalog] .navigation__item--has-dropdown::after {
   margin-bottom: var(--section-gap);
 }
 .cart__hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/src/assets/images/cart/cart-banner.png") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/images/cart/cart-banner.png") center/cover no-repeat;
   padding: 86px 0 82px;
   text-align: center;
   margin-bottom: 70px;
@@ -2068,7 +2068,7 @@ body[data-page=catalog] .navigation__item--has-dropdown::after {
   right: -6px;
   width: 20px;
   height: 22px;
-  background-image: url("/src/assets/images/icons/trash-icon.svg");
+  background-image: url("assets/images/icons/trash-icon.svg");
   background-repeat: no-repeat;
 }
 @media (max-width: 768px) {
@@ -2708,7 +2708,7 @@ body[data-page=catalog] .navigation__item--has-dropdown::after {
 }
 .catalog__search-button::after {
   content: "";
-  background-image: url("/src/assets/images/icons/search-icon.svg");
+  background-image: url("assets/images/icons/search-icon.svg");
   background-repeat: no-repeat;
   width: 17px;
   height: 17px;
@@ -2840,10 +2840,10 @@ body[data-page=catalog] .navigation__item--has-dropdown::after {
   background-repeat: no-repeat;
 }
 .catalog .catalog-sidebar .sidebar-product .rating .star.full {
-  background-image: url("/src/assets/images/icons/full-star.svg");
+  background-image: url("assets/images/icons/full-star.svg");
 }
 .catalog .catalog-sidebar .sidebar-product .rating .star.empty {
-  background-image: url("/src/assets/images/icons/empty-star.svg");
+  background-image: url("assets/images/icons/empty-star.svg");
 }
 .catalog .catalog-sidebar .sidebar-product__price {
   font-size: 15px;
@@ -2992,7 +2992,7 @@ body[data-page=catalog] .navigation__item--has-dropdown::after {
   right: 18px;
   width: 25px;
   height: 25px;
-  background-image: url("/src/assets/images/icons/close-icon.svg");
+  background-image: url("assets/images/icons/close-icon.svg");
   background-size: 25px;
   cursor: pointer;
 }
@@ -3389,7 +3389,7 @@ body[data-page=catalog] .navigation__item--has-dropdown::after {
 .hero__bottom-container .promo-card {
   position: relative;
   overflow: hidden;
-  background-image: url("/src/assets/images/home/promo-card-bg.png");
+  background-image: url("assets/images/home/promo-card-bg.png");
   background-size: cover;
   background-position: center;
   max-width: 50%;
@@ -3772,7 +3772,7 @@ body[data-page=catalog] .navigation__item--has-dropdown::after {
 }
 
 .offer-banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/assets/images/home/offer-banner.png") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("assets/images/home/offer-banner.png") center/cover no-repeat;
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
@@ -4320,10 +4320,10 @@ body[data-page=catalog] .navigation__item--has-dropdown::after {
   background-repeat: no-repeat;
 }
 .pdp .stars .pdp-star--full {
-  background-image: url("/src/assets/images/icons/full-star.svg");
+  background-image: url("assets/images/icons/full-star.svg");
 }
 .pdp .stars .pdp-star--empty {
-  background-image: url("/src/assets/images/icons/empty-star.svg");
+  background-image: url("assets/images/icons/empty-star.svg");
 }
 @media (max-width: 768px) {
   .pdp .stars .pdp-star {
