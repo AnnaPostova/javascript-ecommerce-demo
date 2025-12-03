@@ -1,5 +1,5 @@
 (function () {
-    const DATA_URL = "/src/assets/data.json";
+    const DATA_URL = "assets/data.json";
 
     let currentProduct = null;
 
@@ -347,3 +347,4 @@
 
     document.addEventListener("DOMContentLoaded", initProductPage);
 })();
+
