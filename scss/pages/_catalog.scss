@@ -394,7 +394,7 @@
 
          &::after {
             content: "";
-            background-image:  url("/src/assets/images/icons/search-icon.svg");
+            background-image:  url("../../assets/images/icons/search-icon.svg");
             background-repeat: no-repeat;
             width: 17px;
             height: 17px;
@@ -511,11 +511,11 @@
                     background-repeat: no-repeat;
 
                     &.full {
-                        background-image: url("/src/assets/images/icons/full-star.svg");
+                        background-image: url("../../assets/images/icons/full-star.svg");
                     }
 
                     &.empty {
-                        background-image: url("/src/assets/images/icons/empty-star.svg");
+                        background-image: url("../../assets/images/icons/empty-star.svg");
                     }
                 }
             }
@@ -653,7 +653,7 @@
                 right: 18px;
                 width: 25px;
                 height: 25px;
-                background-image: url("/src/assets/images/icons/close-icon.svg");
+                background-image: url("../../assets/images/icons/close-icon.svg");
                 background-size: 25px;
                 cursor: pointer;
             }

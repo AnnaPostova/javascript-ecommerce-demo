@@ -1,5 +1,5 @@
 (function () {
-    const DATA_URL = "assets/data.json";
+    const DATA_URL = "../assets/data.json";
 
     let currentProduct = null;
 

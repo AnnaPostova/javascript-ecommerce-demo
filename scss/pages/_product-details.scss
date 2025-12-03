@@ -158,11 +158,11 @@
             background-repeat: no-repeat;
 
             &--full {
-                background-image: url("/src/assets/images/icons/full-star.svg");
+                background-image: url("../../assets/images/icons/full-star.svg");
             }
 
             &--empty {
-                background-image: url("/src/assets/images/icons/empty-star.svg");
+                background-image: url("../../assets/images/icons/empty-star.svg");
             }
         }
 

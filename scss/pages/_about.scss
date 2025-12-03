@@ -28,12 +28,12 @@
 
     &--about {
         background: linear-gradient(rgb(0 0 0 / 40%), rgb(0 0 0 / 40%)),
-        url("/src/assets/images/about/main-banner.jpg") center/cover no-repeat;
+        url("../../assets/images/about/main-banner.jpg") center/cover no-repeat;
     }
 
     &--contact {
         background: linear-gradient(rgb(0 0 0 / 40%), rgb(0 0 0 / 40%)),
-    url("/src/assets/images/contact/main-banner.jpg") center/cover no-repeat;
+    url("../../assets/images/contact/main-banner.jpg") center/cover no-repeat;
     }
 
     h1 {

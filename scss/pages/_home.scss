@@ -237,7 +237,7 @@
         .promo-card {
             position: relative;
             overflow: hidden;
-            background-image: url("/src/assets/images/home/promo-card-bg.png");
+            background-image: url("../../assets/images/home/promo-card-bg.png");
             background-size: cover;
             background-position: center;
             max-width: 50%;
@@ -477,7 +477,7 @@
 
 .offer-banner {
     background: linear-gradient(rgb(0 0 0 / 40%), rgb(0 0 0 / 40%)),
-    url("/src/assets/images/home/offer-banner.png") center/cover no-repeat;
+    url("../../assets/images/home/offer-banner.png") center/cover no-repeat;
 
     @include container;
 
