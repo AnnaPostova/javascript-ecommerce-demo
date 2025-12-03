@@ -156,29 +156,29 @@ function renderHeader() {
         </button>
         <div class="header__social-icons header__social-icons--desktop">
             <a href="https://www.facebook.com/" aria-label="Facebook link">
-                <img src="/src/assets/images/header/facebook.svg" alt="" width="20" height="20">
+                <img src="assets/images/header/facebook.svg" alt="" width="20" height="20">
             </a>
             <a href="https://x.com/" aria-label="Twitter link">
-                <img src="/src/assets/images/header/twitter.svg" alt="" width="20" height="20">
+                <img src="assets/images/header/twitter.svg" alt="" width="20" height="20">
             </a>
             <a href="https://www.instagram.com/" aria-label="Instagram link">
-                <img src="/src/assets/images/header/instagram.svg" alt="" width="20" height="20">
+                <img src="assets/images/header/instagram.svg" alt="" width="20" height="20">
             </a>
         </div>
 
         <a href="/index.html" class="header__logo">
             <span class="header__logo-icon">
-                <img src="/src/assets/images/header/logo.png" alt="Logo Icon" width="35" height="35">
+                <img src="assets/images/header/logo.png" alt="Logo Icon" width="35" height="35">
             </span>
             <span class="header__logo-text">Best Shop</span>
         </a>
 
         <div class="header__controls">
             <a href="#" aria-label="Account link">
-                <img src="/src/assets/images/header/user.svg" alt="" width="30" height="34">
+                <img src="assets/images/header/user.svg" alt="" width="30" height="34">
             </a>
-            <a class="header-cart" href="/src/html/cart.html" aria-label="Shopping Cart link">
-                <img src="/src/assets/images/header/shopping-cart.svg" alt="" width="34" height="34">
+            <a class="header-cart" href="html/cart.html" aria-label="Shopping Cart link">
+                <img src="assets/images/header/shopping-cart.svg" alt="" width="34" height="34">
                 <span class="header-cart__count" data-cart-count hidden>0</span>
             </a>
         </div>
@@ -189,26 +189,26 @@ function renderHeader() {
                 <a href="/index.html">Home</a>
             </li>
             <li class="navigation__item navigation__item--has-dropdown" data-page="catalog">
-                <a class="navigation__link navigation__link--with-arrow" href="/src/html/catalog.html">
+                <a class="navigation__link navigation__link--with-arrow" href="html/catalog.html">
                     Catalog
                 </a>
             </li>
             <li class="navigation__item" data-page="about">
-                <a href="/src/html/about.html">About Us</a>
+                <a href="html/about.html">About Us</a>
             </li>
             <li class="navigation__item" data-page="contact">
-                <a href="/src/html/contact.html">Contact Us</a>
+                <a href="html/contact.html">Contact Us</a>
             </li>
         </ul>
         <div class="header__social-icons header__social-icons--mobile">
             <a href="https://www.facebook.com/" aria-label="Facebook link">
-                <img src="/src/assets/images/header/facebook.svg" alt="" width="20" height="20">
+                <img src="assets/images/header/facebook.svg" alt="" width="20" height="20">
             </a>
             <a href="https://x.com/" aria-label="Twitter link">
-                <img src="/src/assets/images/header/twitter.svg" alt="" width="20" height="20">
+                <img src="assets/images/header/twitter.svg" alt="" width="20" height="20">
             </a>
             <a href="https://www.instagram.com/" aria-label="Instagram link">
-                <img src="/src/assets/images/header/instagram.svg" alt="" width="20" height="20">
+                <img src="assets/images/header/instagram.svg" alt="" width="20" height="20">
             </a>
         </div>
     </nav>
@@ -234,19 +234,19 @@ function renderFooter() {
             <h2 class="benefits__title" id="benefits-title">Our Benefits</h2>
             <ul class="benefits__list">
                 <li class="benefits__item">
-                    <img src="/src/assets/images/footer/airplane.png" alt="" aria-hidden="true" width="60" height="60">
+                    <img src="assets/images/footer/airplane.png" alt="" aria-hidden="true" width="60" height="60">
                     <p>Velit nisl sodales eget donec quis, volutpat orci.</p>
                 </li>
                 <li class="benefits__item">
-                    <img src="/src/assets/images/footer/truck.png" alt="" aria-hidden="true" width="60" height="60">
+                    <img src="assets/images/footer/truck.png" alt="" aria-hidden="true" width="60" height="60">
                     <p>Dolor eu varius. Morbi fermentum velit nisl.</p>
                 </li>
                 <li class="benefits__item">
-                    <img src="/src/assets/images/footer/coins.png" alt="" aria-hidden="true" width="60" height="60">
+                    <img src="assets/images/footer/coins.png" alt="" aria-hidden="true" width="60" height="60">
                     <p>Malesuada fames ac ante ipsum primis in faucibus.</p>
                 </li>
                 <li class="benefits__item">
-                    <img src="/src/assets/images/footer/education.png" alt="" aria-hidden="true" width="60" height="60">
+                    <img src="assets/images/footer/education.png" alt="" aria-hidden="true" width="60" height="60">
                     <p>Nisl sodales eget donec quis, volutpat orci.</p>
                 </li>
             </ul>
@@ -257,7 +257,7 @@ function renderFooter() {
         <div class="footer__first-container">
             <div class="footer__links">
                 <div class="footer__block">
-                    <h3 class="footer__title"><a href="/src/html/about.html">About Us</a></h3>
+                    <h3 class="footer__title"><a href="html/about.html">About Us</a></h3>
                     <ul>
                         <li><a href="#">Organisation</a></li>
                         <li><a href="#">Partners</a></li>
@@ -291,29 +291,29 @@ function renderFooter() {
         </div>
         <div class="footer__second-container">
             <div class="footer__block">
-                <h3 class="footer__title"><a href="/src/html/contact.html">Contact Us</a></h3>
+                <h3 class="footer__title"><a href="html/contact.html">Contact Us</a></h3>
                 <p>Bendum dolor eu varius. Morbi fermentum velitsodales egetonec. volutpat orci. Sed ipsum felis, tristique egestas et, convallis ac velitn consequat nec luctus.</p>
             </div>
             <address>
                 <ul class="contacts">
                     <li>
                         <a href="tel:+632366322">
-                            <img src="/src/assets/images/footer/phone-icon.svg" alt="Phone Icon">
+                            <img src="assets/images/footer/phone-icon.svg" alt="Phone Icon">
                             <span>Phone: (+63) 236 6322</span>
                         </a>
                     </li>
                     <li>
                         <a href="mailto:public@news.com">
-                            <img src="/src/assets/images/footer/mail-icon.svg" alt="Mail Icon">
+                            <img src="assets/images/footer/mail-icon.svg" alt="Mail Icon">
                             <span>public@news.com</span>
                         </a>
                     </li>
                     <li>
-                        <img src="/src/assets/images/footer/clock-icon.svg" alt="Clock Icon">
+                        <img src="assets/images/footer/clock-icon.svg" alt="Clock Icon">
                         <p>Mon–Fri: 10am–6pm<br>Sat–Sun: 10am–6pm</p>
                     </li>
                     <li>
-                        <img src="/src/assets/images/footer/location-icon.svg" alt="Location Icon">
+                        <img src="assets/images/footer/location-icon.svg" alt="Location Icon">
                         <p>639 Jade Valley, Washington Dr</p>
                     </li>
                 </ul>
@@ -441,7 +441,7 @@ function createProductCard(product) {
     articleBlock.dataset.id = product.id;
 
     articleBlock.innerHTML = `
-        <a href="/src/html/product-details.html?id=${product.id}" class="product-card__link">
+        <a href="html/product-details.html?id=${product.id}" class="product-card__link">
             <figure class="product-card__image">
                 ${product.salesStatus 
                         ? "<span class='product-card__tag' aria-label='On sale'>Sale</span>"
@@ -738,7 +738,7 @@ function initLoginModal() {
 }
 
 function initProducts() {
-    fetch("/src/assets/data.json")
+    fetch("assets/data.json")
         .then((response) => response.json())
         .then((json) => {
             const products = Array.isArray(json) ? json : json.data || [];
@@ -797,3 +797,4 @@ document.addEventListener("DOMContentLoaded", function () {
     initProducts();
     initAddToCartHandler();
 });
+
