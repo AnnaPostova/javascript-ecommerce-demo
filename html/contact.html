@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/src/dist/css/main.css">
+</head>
+<body data-page="contact">
+    <div id="header-container"></div>
+    <main>
+        <section class="page-hero page-hero--contact">
+            <div class="page-hero__container">
+                <h1>Contact Us</h1>
+                <p>Duis vestibulum elit vel neque pharetra vulputate. Duis rutrum non risus in imperdiet. 
+                </p>
+            </div>
+        </section>
+        <section class="info-grid">
+            <div class="info-grid__container">
+                <ul class="info-grid__list">
+                    <li class="info-grid__item">
+                        <img src="/src/assets/images/about/advantages-icon-1.svg" alt="" width="62" height="62">
+                        <h3 class="info-grid__heading">Our Location</h3>
+                        <p class="info-grid__info">1234 NW Bobcat Lane, St.<br>Robert, MO 65584-5678</p>
+                    </li>
+                    <li class="info-grid__item">
+                        <img src="/src/assets/images/about/advantages-icon-2.svg" alt="" width="62" height="62">
+                        <h3 class="info-grid__heading">Operating Time</h3>
+                        <p class="info-grid__info">Monday - Friday: 9am - 6 pm<br>Weekends: 10:30 am - 6pm</p>
+                    </li>
+                    <li class="info-grid__item">
+                        <img src="/src/assets/images/about/advantages-icon-3.svg" alt="" width="62" height="62">
+                        <h3 class="info-grid__heading">Our Email</h3>
+                        <p class="info-grid__info">
+                            <a href="mailto:best@shop.com">best@shop.com</a><br>
+                            <a href="mailto:info@bestshop.com">info@bestshop.com</a>
+                        </p>
+                    </li>
+                    <li class="info-grid__item">
+                        <img src="/src/assets/images/about/advantages-icon-4.svg" alt="" width="62" height="62">
+                        <h3 class="info-grid__heading">Call Us</h3>
+                        <p class="info-grid__info">
+                            <a href="tel:+12681428413">(268)142-8413</a><br>
+                            <a href="tel:+17602652917">(760)265-2917</a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="feedback">
+            <div class="feedback__container">
+                <figure class="feedback__image">
+                    <img
+                        src="/src/assets/images/contact/feedback-img.jpg"
+                        alt="Open suitcase with clothes and travel items"
+                        width="627"
+                        height="700"
+                    >
+                </figure>
+                <div class="feedback__content">
+                    <h2 class="feedback__title">
+                        Your Feedback Is Much Appreciated!
+                    </h2>
+                    <p class="feedback__subtitle">
+                        We will contact you when you complete the following form!
+                    </p>
+
+                    <form class="form feedback__form" action="#" method="post" novalidate>
+                        <div class="form__field feedback__field">
+                            <label class="form__label feedback__label" for="feedback-name">
+                                Your Name <span aria-hidden="true">*</span>
+                            </label>
+                            <input
+                                class="form__input feedback__input"
+                                type="text"
+                                id="feedback-name"
+                                name="name"
+                                required
+                                autocomplete="name"
+                                aria-required="true"
+                                aria-describedby="feedback-name-error"
+                            >
+                            <p class="form__error feedback__error" id="feedback-name-error" aria-live="polite"></p>
+                        </div>
+
+                        <div class="form__field feedback__field">
+                            <label class="form__label feedback__label" for="feedback-email">
+                                Your Email Address <span aria-hidden="true">*</span>
+                            </label>
+                            <input
+                                class="form__input feedback__input"
+                                type="email"
+                                id="feedback-email"
+                                name="email"
+                                required
+                                autocomplete="email"
+                                aria-required="true"
+                                aria-describedby="feedback-email-error"
+                            >
+                            <p class="form__error feedback__error" id="feedback-email-error" aria-live="polite"></p>
+                        </div>
+
+                        <div class="form__field feedback__field">
+                            <label class="form__label feedback__label" for="feedback-topic">
+                                Topic <span aria-hidden="true">*</span>
+                            </label>
+                            <input
+                                class="form__input feedback__input"
+                                type="text"
+                                id="feedback-topic"
+                                name="topic"
+                                required
+                                aria-required="true"
+                                aria-describedby="feedback-topic-error"
+                            >
+                            <p class="form__error feedback__error" id="feedback-topic-error" aria-live="polite"></p>
+                        </div>
+
+                        <div class="form__field feedback__field">
+                            <label class="form__label feedback__label" for="feedback-message">
+                                Your Message <span aria-hidden="true">*</span>
+                            </label>
+                            <textarea
+                                class="form__textarea feedback__textarea"
+                                id="feedback-message"
+                                name="message"
+                                rows="4"
+                                required
+                                aria-required="true"
+                                aria-describedby="feedback-message-error"
+                            ></textarea>
+                            <p class="form__error feedback__error" id="feedback-message-error" aria-live="polite"></p>
+                        </div>
+
+                        <button class="form__submit primary-button feedback__submit" type="submit">
+                            Send
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="footer-container"></div>
+    <script src="/src/js/main.js"></script>
+    <script src="/src/js/contact.js"></script>
+</body>
+</html>

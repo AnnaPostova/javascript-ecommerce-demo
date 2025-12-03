@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="/src/dist/css/main.css">
+</head>
+<body data-page="catalog">
+    <div id="header-container"></div>
+    <main class="catalog">
+        <h1 class="catalog__title visually-hidden">Catalog</h1>
+        <div class="filters-container" id="catalogFilters"></div>
+        <div class="catalog__container">
+            <div class="catalog__top-container">
+                <div class="catalog__left-block">
+                    <p class="catalog__results" id="catalogResults" aria-live="polite">
+                        Showing <span id="startCount">0</span>-<span id="endCount">0</span> of <span id="totalCount">0</span> results
+                    </p>
+                    <div class="catalog__filters-block">
+                        <label class="catalog__sort">
+                            <select name="sort" id="catalogSort">
+                                <option value="default">Default Sorting</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                                <option value="popularity-desc">Most Popular</option>
+                                <option value="rating-desc">Top Rated</option>
+                            </select>
+                        </label>
+                        <button type="button" class="catalog__filters-toggle" aria-label="Open filters" aria-expanded="false" aria-controls="catalogFilters">
+                            Filters
+                        </button>
+                    </div>
+                </div>
+                <div class="catalog__right-block">
+                    <form class="catalog__search-form" id="searchForm" role="search" novalidate>
+                        <label for="catalogSearch" class="catalog__search-label visually-hidden">
+                            Search
+                        </label>
+
+                        <input type="search" id="catalogSearch" name="search" placeholder="Search Models" autocomplete="off" class="catalog__search-input">
+
+                        <button type="submit" class="catalog__search-button" aria-label="Search models"></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="catalog__main-block">
+                <section class="catalog__products" aria-label="Product catalog"> 
+                    <ul class="product-grid" id="productList">
+                    </ul>
+                </section>
+
+                <aside class="catalog-sidebar" aria-label="Top Best Sets">
+                    <section class="catalog-sidebar__container">
+                        <h2 class="catalog-sidebar__title">Top Best Sets</h2>
+                        <ul class="catalog-sidebar__list" id="sidebarSets"></ul>
+                    </section>
+                </aside>
+            </div>
+
+            <nav class="pagination" aria-label="Catalog pagination">
+                <button class="pagination__button pagination__button--prev" id="paginationPrev" type="button" disabled>
+                    <span>❮</span> Previous
+                </button>
+                <div>
+                    <ul class="pagination__pages" id="paginationPages"></ul>
+                </div>
+                <button class="pagination__button pagination__button--next" id="paginationNext" type="button" disabled>
+                    Next <span>❯</span>
+                </button>
+            </nav>
+        </div>
+        <div class="catalog-popup" id="pnfPopup" role="alertdialog" aria-modal="true" hidden>
+            <div class="catalog-popup__content">
+                <h2>Product not found</h2>
+                <p>Unable to find the product for the search query.</p>
+                <button type="button" class="catalog-popup__close" id="pnfClose"></button>
+            </div>
+        </div>
+    </main>
+    <div id="footer-container"></div>
+    <script src="/src/js/catalog.js"></script>
+    <script src="/src/js/main.js"></script>
+</body>
+</html>

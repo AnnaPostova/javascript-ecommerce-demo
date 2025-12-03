@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="/src/dist/css/main.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <main>
+        <section id="cart" class="cart">
+            <div class="cart__hero">
+                <h1 class="cart__heading">My Cart</h1>
+            </div>
+            <div class="cart__container">
+                <div class="cart__block">
+                    <div class="cart__table-container">
+                        <table class="cart-table">
+                            <thead class="cart-table__head">
+                                <tr>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Product name</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Total</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody data-cart-items>
+                            </tbody>
+                        </table>
+                        <p class="cart__message" data-cart-message hidden></p>
+                    </div>
+
+                    <div class="cart__bottom-block">
+                        <div class="cart__actions">
+                            <button class="cart__button primary-button" type="button" data-cart-continue>
+                                Continue shopping
+                            </button>
+                            <button class="cart__button primary-button" type="button" data-cart-clear>
+                                Clear shopping cart
+                            </button>
+                        </div>
+                        <div class="cart-summary" aria-label="Cart Summary">
+                            <dl class="cart-summary-block">
+                                <div class="cart-summary__row">
+                                    <dt>Sub total</dt>
+                                    <dd data-cart-subtotal>$0</dd>
+                                </div>
+                                <div class="cart-summary__row">
+                                    <dt>Shipping</dt>
+                                    <dd data-cart-shipping>$0</dd>
+                                </div>
+                                <div class="cart-summary__row cart-summary__row--discount">
+                                    <dt>Discount</dt>
+                                    <dd data-cart-discount>$0</dd>
+                                </div>
+                                <div class="cart-summary__row cart-summary__row--total">
+                                    <dt>Total</dt>
+                                    <dd data-cart-total>$0</dd>
+                                </div>
+                            </dl>
+                            <button class="cart-summary__button primary-button" type="button" data-cart-checkout>
+                                Checkout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="footer-container"></div>
+    <script src="/src/js/main.js"></script>
+    <script src="/src/js/cart.js"></script>
+</body>
+</html>

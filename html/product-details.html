@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="/src/dist/css/main.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <main>
+        <section class="pdp">
+            <h1 id="pdpTitle" class="pdp__heading visually-hidden">Product Details</h1>
+            <div class="pdp__container">
+                <article class="pdp__images">
+                    <figure class="pdp__image-main">
+                        <img src="" alt="" width="540" height="540"data-pdp-image>
+                    </figure>
+
+                    <ul class="pdp__thumbnails">
+                        <li>
+                            <img src="/src/assets/images/products/small-suitcase1.png" alt="Suitcase thumbnail">
+                        </li>
+                        <li>
+                            <img src="/src/assets/images/products/small-suitcase2.png" alt="Suitcase thumbnail">
+                        </li>
+                        <li>
+                            <img src="/src/assets/images/products/small-suitcase3.png" alt="Suitcase thumbnail">
+                        </li>
+                        <li>
+                            <img src="/src/assets/images/products/small-suitcase4.png" alt="Suitcase thumbnail">
+                        </li>
+                    </ul>
+                </article>
+                <article class="pdp__description">
+                    <h2 id="pdpTitle" class="pdp__title" data-pdp-name></h2>
+                    <div class="pdp__rating">
+                        <div class="pdp__stars stars" data-pdp-rating></div>
+                        <p class="pdp__reviews">
+                            (<span data-pdp-reviews-count>0</span> Clients Review)
+                        </p>
+                    </div>
+                    <p class="pdp__price" data-pdp-price></p>
+                    <div class="pdp__short-description">
+                        <p>The new Global Explorer Max Comfort Suitcase Pro is a bold reimagining of
+                            travel essentials, designed to elevate every journey. Made with at least 30%
+                            recycled materials, its lightweight yet impact-resistant shell combines eco-
+                            conscious innovation with rugged durability.
+                        </p>
+                        <p>The ergonomic handle and GlideMotion spinner wheels ensure effortless  
+                            mobility while making a statement in sleek design. Inside, the modular  
+                            compartments and adjustable straps keep your belongings secure and 
+                            neatly organized, no matter the destination.
+                        </p>
+                    </div>
+                    <form class="pdp__options" novalidate>
+                        <fieldset class="pdp__options-fieldset">
+                            <div class="pdp__control">
+                                <label for="pdpSize">Size</label>
+                                <select id="pdpSize" name="size" class="pdp__select" data-pdp="sizeSelect">
+                                    <option value="">Choose option</option>
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                    <option value="S-L">S-L</option>
+                                    <option value="S, M, XL">S, M, XL</option>
+                                </select>
+                            </div>
+
+                            <div class="pdp__control">
+                                <label for="pdpColor">Color</label>
+                                <select id="pdpColor" name="color" class="pdp__select" data-pdp="colorSelect">
+                                    <option value="">Choose option</option>
+                                    <option value="red">Red</option>
+                                    <option value="blue">Blue</option>
+                                    <option value="green">Green</option>
+                                    <option value="black">Black</option>
+                                    <option value="grey">Grey</option>
+                                    <option value="yellow">Yellow</option>
+                                    <option value="pink">Pink</option>
+                                </select>
+                            </div>
+
+                            <div class="pdp__control">
+                                <label for="pdpCategory">Category</label>
+                                <select id="pdpCategory" name="category" class="pdp__select" data-pdp="categorySelect">
+                                    <option value="">Choose option</option>
+                                    <option value="carry-ons">Carry-ons</option>
+                                    <option value="suitcases">Suitcases</option>
+                                    <option value="luggage sets">Luggage sets</option>
+                                    <option value="kids' luggage">Kids' luggage</option>
+                                </select>
+                            </div>
+                        </fieldset>
+
+                        <div class="pdp__actions">
+                            <div class="pdp__quantity" aria-label="Choose quantity">
+                                <button type="button" class="pdp__quantity-btn" data-qty-minus aria-label="Decrease quantity">
+                                     -
+                                </button>
+                                <input type="number" class="pdp__quantity-input" data-qty-input min="1" value="1" aria-live="polite" name="quantity-count">
+                                <button type="button" class="pdp__quantity-btn" data-qty-plus aria-label="Increase quantity">
+                                    +
+                                </button>
+                            </div>
+                            <button type="button" class="pdp__add-to-cart primary-button" data-pdp-add-to-cart aria-label="Add product to cart">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </form>
+                    <p class="pdp__payments">
+                        <span>Payment:</span>
+                        <span><img src="/src/assets/images/icons/visa.svg" alt="Visa icon"></span>
+                        <span><img src="/src/assets/images/icons/american-express.svg" alt="American Express icon"></span>
+                        <span><img src="/src/assets/images/icons/master-card.svg" alt="Mastercard icon"></span>
+                        <span><img src="/src/assets/images/icons/paypal.svg" alt="PayPal icon"></span>
+                    </p>
+                </article>
+            </div>
+            <section class="pdp-tabs" aria-label="Product information">
+                <nav class="pdp-tabs__nav" aria-label="Product sections" role="tablist">
+                    <button type="button" class="pdp-tabs__btn pdp-tabs__btn--active" data-pdp-tab="details" role="tab" aria-controls="pdp-tab-details">
+                        Details
+                    </button>
+                    <button type="button" class="pdp-tabs__btn" data-pdp-tab="reviews" role="tab" aria-controls="pdp-tab-reviews">
+                        Reviews
+                    </button>
+                    <button type="button" class="pdp-tabs__btn" data-pdp-tab="shipping" role="tab" aria-controls="pdp-tab-shipping">
+                        Shipping Policy
+                    </button>
+                </nav>
+                <div class="pdp-tabs__panels">
+                    <section class="pdp-tabs__panel pdp-tabs__panel--active" data-pdp-panel="details" aria-label="Product details">
+                        <div>
+                            <p>
+                                Vestibulum commodo sapien non elit porttitor, vitae volutpat nibh mollis. Nulla porta risus id neque tempor, in efficitur justo imperdiet. Etiam a ex at 
+                                ante tincidunt imperdiet. Nunc congue ex vel nisl viverra, sit amet aliquet lectus ullamcorper. Praesent luctus lacus non lorem elementum, eu tristique 
+                                sapien suscipit. Sed bibendum, ipsum nec viverra malesuada, erat nisi sodales purus, eget hendrerit dui ligula eu enim. Ut non est nisi. Pellentesque 
+                                tristique pretium dolor eu commodo. Proin iaculis nibh vitae lectus mollis bibendum. Quisque varius eget urna sit amet luctus. Suspendisse potenti. 
+                                Curabitur ac placerat est, sit amet sodales risus. Pellentesque viverra dui auctor, ullamcorper turpis pharetra, facilisis quam.
+                            </p>
+                            <p>
+                                Proin iaculis nibh vitae lectus mollis bibendum. Quisque varius eget urna sit amet luctus. Suspendisse potenti. Curabitur ac placerat est, sit amet sodales 
+                                risus. Pellentesque viverra dui auctor, ullamcorper turpis pharetra, facilisis quam. Proin iaculis nibh vitae lectus mollis bibendum. 
+                            </p>
+                            <p>
+                                Quisque varius eget urna sit amet luctus. Suspendisse potenti. Curabitur ac placerat est, sit amet sodales risus. Pellentesque viverra dui auctor, 
+                                ullamcorper turpis pharetra, facilisis quam.
+                            </p>
+                        </div>
+                    </section>
+                    <section class="pdp-tabs__panel" data-pdp-panel="reviews">
+                        <section class="pdp-reviews" aria-label="Product reviews and form">
+                            <div class="pdp-reviews__container">
+                                <div class="pdp-reviews__list" aria-label="Customer reviews">
+                                    <h3 class="pdp-reviews__heading">
+                                        1 review for Global Explorer Max Comfort Suitcase Pro
+                                    </h3>
+                                    <article class="pdp-review">
+                                        <figure class="pdp-review__author-photo">
+                                            <img src="/src/assets/images/people/Ella.png" alt="Photo of Ella Harper" class="pdp-review__avatar" width="48" height="48">
+                                        </figure>
+                                        <div class="pdp-review__container">
+                                            <div class="pdp-review__block">
+                                                <div class="pdp-review__author">
+                                                    <p class="pdp-review__name">Ella Harper</p>
+                                                    <p class="pdp-review__date">
+                                                        / June 11, 2025
+                                                    </p>
+                                                </div>
+                                                <div class="pdp-review__stars stars">
+                                                </div>
+                                            </div>
+                                            <p class="pdp-review__text">
+                                                Proin iaculis nibh vitae lectus mollis bibendum. Quisque varius eget urna sit amet
+                                                luctus. Suspendisse potenti curabitur ac placerat est, sit amet sodales risus.
+                                            </p>
+                                        </div>
+                                    </article>
+                                </div>
+                                <section class="pdp-reviews__form" aria-label="Add a review">
+                                    <h3 class="pdp-reviews__form-heading">Add Review</h3>
+                                    <p class="pdp-reviews__note">
+                                        Your email address won’t be shared with anybody. Required fields have the symbol *
+                                    </p>
+                                    <form class="form review-form" novalidate data-review-form>
+                                        <fieldset class="review-form__fieldset">
+                                            <div class="review-form__title">Rate product</div>
+                                            <div class="rating" role="radiogroup" aria-label="Rate product from 1 to 5 stars">
+                                                <input class="rating__input" type="radio" id="reviewRating5" name="rating" value="5" aria-label="5 stars">
+                                                <label class="rating__label" for="reviewRating5">★</label>
+                                                <input class="rating__input" type="radio" id="reviewRating4" name="rating" value="4" aria-label="4 stars">
+                                                <label class="rating__label" for="reviewRating4">★</label>
+                                                <input class="rating__input" type="radio" id="reviewRating3" name="rating" value="3" aria-label="3 stars" >
+                                                <label class="rating__label" for="reviewRating3">★</label>
+                                                <input class="rating__input" type="radio" id="reviewRating2" name="rating" value="2" aria-label="2 stars" >
+                                                <label class="rating__label" for="reviewRating2">★</label>
+                                                <input class="rating__input" type="radio" id="reviewRating1" name="rating" value="1" aria-label="1 star">
+                                                <label class="rating__label" for="reviewRating1">★</label>
+                                            </div>
+                                        </fieldset>
+                                        <div class="review-form__group review-form__group--full">
+                                            <label class="review-form__label" for="reviewText" data-floating-label>Your Review *</label>
+                                            <textarea id="reviewText" name="review" class="form__textarea review-form__textarea" rows="5" required></textarea>
+                                        </div>
+                                        <div class="review-form__row">
+                                            <div class="review-form__group">
+                                                <label class="review-form__label" for="reviewName" data-floating-label>Your Name *</label>
+                                                <input id="reviewName" name="name" type="text" class="form__input review-form__input" required >
+                                            </div>
+                                            <div class="review-form__group">
+                                                <label class="review-form__label" for="reviewEmail" data-floating-label>Your Email *</label>
+                                                <input id="reviewEmail" name="email" type="email" class="form__input review-form__input" required >
+                                            </div>
+                                        </div>
+                                        <div class="review-form__group review-form__group--checkbox">
+                                            <label class="review-form__checkbox-label">
+                                                <input type="checkbox" name="remember" class="review-form__checkbox-input" >
+                                                <span class="review-form__checkbox-box" aria-hidden="true"></span>
+                                                <span class="review-form__checkbox-text">
+                                                    Save my name, email, and website in this browser for when I leave another comment.
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <p class="review-form__message" aria-live="polite" data-review-message></p>
+                                        <button type="submit" class="review-form__submit primary-button">
+                                            Submit
+                                        </button>
+                                    </form>
+                                </section>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="pdp-tabs__panel" data-pdp-panel="shipping" aria-label="Shipping policy">
+                        <p>
+                            Quisque varius eget urna sit amet luctus. Suspendisse potenti. Curabitur ac placerat est, sit amet sodales risus. Pellentesque viverra dui auctor, 
+                            ullamcorper turpis pharetra, facilisis quam.
+                        </p>
+                    </section>
+                </div>
+            </section>
+            <section class="pdp-recommendations" aria-label="Recommended products">
+                <h2 class="pdp-recommendations__title">You May Also Like</h2>
+                <div class="pdp-recommendations__list products carousel" id="pdpRecommendations">
+                    <button class="carousel__btn prev" aria-label="Previous slide">←</button>
+                    <div class="carousel__track-container">
+                        <div class="carousel__track"></div>
+                    </div>
+                    <button class="carousel__btn next" aria-label="Next slide">→</button>
+                </div>
+            </section>
+        </section>
+    </main>
+    <div id="footer-container"></div>
+    <script src="/src/js/main.js"></script>
+    <script src="/src/js/product.js"></script>
+</body>
+</html>

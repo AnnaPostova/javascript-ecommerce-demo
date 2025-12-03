@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Shop (Fundamentals)</title>
+    <link rel="stylesheet" href="/src/dist/css/main.css">
+</head>
+<body data-page="home">
+    <div id="header-container"></div>
+    <main>
+        <section class="hero">
+            <div class="hero__top-container">
+                <div class="hero__block">
+                    <h1>Smart Styles for Every Destination</h1>
+                    <p>Phasellus risus turpis, pretium sit amet magna non, molestie ultricies enim. Nullam pulvinar felis at metus.
+                    </p>
+                    <a class="hero__button-link" href="/src/html/catalog.html">
+                        <button class="hero__button primary-button">View All Items</button>
+                    </a>
+                </div>
+
+                <figure class="hero__image">
+                    <img src="/src/assets/images/home/hero-bg.png" alt="Vintage suitcase with stickers" width="620" height="620">
+                </figure>
+            </div>
+            <div class="hero__bottom-container">
+                <article class="personal-card">
+                    <div class="personal-card__personal-info">
+                        <img src="/src/assets/images/people/lillian.png" alt="Lillian Bennett" width="85" height="93">
+                        <div>
+                            <p class="personal-card__name">Lillian Bennett</p>
+                            <p class="personal-card__role">Chief Marketing Officer</p>
+                        </div>
+                    </div>
+                    <h2 class="personal-card__title">Aliquam Faucibus Odionecom.</h2>
+                    <p>Duis vestibulum elit vel neque pharetra vulputate. Quisque scelerisque nisi urna. Duis rutrum non risus in imperdiet. Proin molestie accumsan nulla sit.</p>
+                    <p>Namaki duis vestibulum elit vel neque pharetra vulputate. Quisque scelerisque nisi urna.</p>
+                </article>
+                <aside class="promo-card">
+                    <h2 class="promo-card__title">25% Discount</h2>
+                    <p>Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut imperdiet et leo in vulputate.</p>
+                    <button class="promo-card__button primary-button">Get Discount</button>
+                </aside>
+            </div>
+        </section>
+        <section class="travel-suitcases">
+            <h2 class="travel-suitcases__title">Travel suitcases</h2>
+            <p>Duis vestibulum elit vel neque pharetra</p>
+
+            <div class="travel-carousel carousel-js" aria-roledescription="carousel" aria-label="Travel suitcases carousel">
+                <div class="travel-carousel__container">
+                    <ul class="travel-carousel__track">
+                        <li class="travel-carousel__slide is-active" aria-current="true">
+                            <article class="suitcase-card">
+                                <figure class="suitcase-card__media">
+                                    <img src="/src/assets/images/home/suitcase-1.png" alt="Silver suitcase against the backdrop of the city">
+                                    <figcaption class="suitcase-card__block">
+                                        <h3 class="suitcase-card__title">Duis vestibulum elit vel neque.</h3>
+                                        <p class="suitcase-card__text">Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.</p>
+                                    </figcaption>
+                                </figure>
+                            </article>
+                        </li>
+                        <li class="travel-carousel__slide" aria-current="false">
+                            <article class="suitcase-card">
+                                <figure class="suitcase-card__media">
+                                    <img src="/src/assets/images/home/suitcase-2.png" alt="Blue suitcase against the backdrop of the airport">
+                                    <figcaption class="suitcase-card__block">
+                                        <h3 class="suitcase-card__title">Neque vestibulum elit nequvel.</h3>
+                                        <p class="suitcase-card__text">Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.</p>
+                                    </figcaption>
+                                </figure>
+                            </article>
+                        </li>
+                        <li class="travel-carousel__slide" aria-current="false">
+                            <article class="suitcase-card">
+                                <figure class="suitcase-card__media">
+                                    <img src="/src/assets/images/home/suitcase-3.png" alt="Silver suitcase against the backdrop of the city">
+                                    <figcaption class="suitcase-card__block">
+                                        <h3 class="suitcase-card__title">Elituis stibulum elit velneque.</h3>
+                                        <p class="suitcase-card__text">Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.</p>
+                                    </figcaption>
+                                </figure>
+                            </article>
+                        </li>
+                        <li class="travel-carousel__slide" aria-current="false">
+                            <article class="suitcase-card">
+                                <figure class="suitcase-card__media">
+                                    <img src="/src/assets/images/home/suitcase-4.png" alt="Silver suitcase against the backdrop of the city">
+                                    <figcaption class="suitcase-card__block">
+                                        <h3 class="suitcase-card__title">Vel vestibulum elit tuvel euqen.</h3>
+                                        <p class="suitcase-card__text">Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.</p>
+                                    </figcaption>
+                                </figure>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="selectedProducts" class="products-block">
+            <div class="products-block__container">
+                <h2 class="products-block__title">Selected Products</h2>
+                <p class="products-block__text">Duis vestibulum elit vel neque pharetra</p>
+                <div id="selectedProductsList" class="products" aria-live="polite">
+                </div>
+            </div>
+        </section>
+        <div id="offer-banner-container"></div>
+         <section id="newProducts" class="products-block new">
+            <div class="products-block__container">
+                <h2 class="products-block__title">New Products Arrival</h2>
+                <p class="products-block__text">Duis vestibulum elit vel neque pharetra</p>
+                <div id="newProductsList" class="products" aria-live="polite">
+                </div>
+            </div>
+        </section>
+        <section class="reviews">
+            <div class="reviews__container">
+                <h2 class="reviews__title">Our Grateful Customers</h2>
+                <p class="reviews__sub-title">Duis vestibulum elit vel neque pharetra</p>
+            </div>
+            <div class="reviews__block">
+                <article class="review">
+                    <img
+                        src="/src/assets/images/people/Ethan.png"
+                        alt="Photo of Ethan"
+                        class="review__photo"
+                    />
+                    <p class="review__text">
+                        Curabitur vulputate arcu odio, ac facilisis diam accumsan ut.
+                        Ut mperdiet et leo in vulputate.
+                    </p>
+                    <p class="review__reviewer">
+                        Ethan Wade, New York
+                    </p>
+                </article>
+                <article class="review">
+                    <img
+                        src="/src/assets/images/people/Jane.png"
+                        alt="Photo of Jane"
+                        class="review__photo"
+                    />
+                    <p class="review__text">
+                        Curabitur vulputate arcu odio, ac facilisis diam accumsan ut.
+                        Ut mperdiet et leo in vulputate.
+                    </p>
+                    <p class="review__reviewer">
+                        Jane Reyes, California
+                    </p>
+                </article>
+                 <article class="review">
+                    <img
+                        src="/src/assets/images/people/Erica.png"
+                        alt="Photo of Erica"
+                        class="review__photo"
+                    />
+                    <p class="review__text">
+                        Curabitur vulputate arcu odio, ac facilisis diam accumsan ut.
+                        Ut mperdiet et leo in vulputate.
+                    </p>
+                    <p class="review__reviewer">
+                        Erica Banks, Miami
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+    <div id="footer-container"></div>
+    <script src="/src/js/main.js"></script>
+    <script src="/src/js/home.js"></script>
+</body>
+</html>
