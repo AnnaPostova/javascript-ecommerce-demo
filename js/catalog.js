@@ -137,7 +137,7 @@
 
             li.innerHTML = `
                 <article class="product-card">
-                    <a href="/src/html/product-details.html?id=${product.id}" class="product-card__link">
+                    <a href="html/product-details.html?id=${product.id}" class="product-card__link">
                         ${isOnSale ? "<p class='product-card__tag'>Sale</p>" : ""}
                         <figure class="product-card__image">
                             <img src="${product.imageUrl}" alt="${product.name}" loading="lazy" width="300" height="360">
@@ -216,7 +216,7 @@
             li.className = "sidebar-product";
             li.innerHTML = `
                 <article class="sidebar-product__inner">
-                    <a href="/src/html/product-details.html?id=${product.id}"
+                    <a href="html/product-details.html?id=${product.id}"
                         class="sidebar-product__link"
                         aria-label="${product.name}">
                         <figure class="sidebar-product__media">
@@ -321,7 +321,7 @@
         }
 
         const productId = encodeURIComponent(foundProduct.id);
-        window.location.href = `/src/html/product-details.html?id=${productId}`;
+        window.location.href = `html/product-details.html?id=${productId}`;
     }
 
     // ===== Init functions =====
@@ -538,7 +538,7 @@
 
         cacheDomElements();
 
-        fetch("/src/assets/data.json")
+        fetch("assets/data.json")
             .then((res) => res.json())
             .then((json) => {
                 const products = Array.isArray(json) ? json : json.data || [];
@@ -561,3 +561,4 @@
 
     document.addEventListener("DOMContentLoaded", initCatalogPage);
 })();
+
