@@ -1,4 +1,5 @@
-import { pathTo, clean } from './path-utils.js';
+import { pathTo, clean } from './utils/path-utils.js';
+import { CART_STORAGE_KEY } from './utils/constants.js';
 
 function initActiveNavItem() {
     const currentPage = document.body.dataset.page;
@@ -358,9 +359,6 @@ function renderOfferBanner() {
         offerBannerContainer.innerHTML = offerBannerHtml;
     }
 }
-
-// ========== Cart utils ========================
-const CART_STORAGE_KEY = "cartItems";
 
 function loadCart() {
     try {

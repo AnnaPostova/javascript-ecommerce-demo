@@ -1,4 +1,4 @@
-import { pathTo, clean } from './path-utils.js';
+import { pathTo, clean } from './utils/path-utils.js';
 
 (function () {
     const PER_PAGE = 12;

@@ -1,4 +1,5 @@
-import { pathTo, clean } from './path-utils.js';
+import { pathTo, clean } from './utils/path-utils.js';
+import { CART_STORAGE_KEY } from './utils/constants.js';
 
 const DATA_URL = pathTo("assets/data.json");
 const SHIPPING_RATE = 30;
@@ -21,8 +22,6 @@ async function loadProducts() {
         console.error("Cannot load products JSON", err);
     }
 }
-
-/* global CART_STORAGE_KEY */
 
 function loadCartFromStorage() {
     try {

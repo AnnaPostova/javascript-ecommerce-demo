@@ -1,4 +1,5 @@
-import { pathTo, clean } from './path-utils.js';
+import { pathTo, clean } from './utils/path-utils.js';
+import { CART_STORAGE_KEY } from './utils/constants.js';
 
 (function () {
     const DATA_URL = pathTo("assets/data.json");
@@ -6,9 +7,6 @@ import { pathTo, clean } from './path-utils.js';
     let currentProduct = null;
 
     /* ========= Cart helpers ========= */
-
-    /* global CART_STORAGE_KEY */
-
     function loadCart() {
         try {
             const raw = localStorage.getItem(CART_STORAGE_KEY);
