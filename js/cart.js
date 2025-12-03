@@ -1,9 +1,20 @@
-const DATA_URL = "../assets/data.json";
 const SHIPPING_RATE = 30;
 const DISCOUNT_LIMIT = 3000;
 
 let productsById = {};
 let cartItems = [];
+
+
+function getBasePrefix() {
+  const isGh = location.hostname.endsWith('github.io');
+  if (!isGh) return '';
+  const [, repo] = location.pathname.split('/');
+  return repo ? `/${repo}/` : '/';
+}
+const BASE = getBasePrefix();
+const pathTo = (p) => `${BASE}${String(p).replace(/^\/+/, '')}`.replace(/\/{2,}/g, '/');
+
+const DATA_URL = pathTo("assets/data.json");
 
 async function loadProducts() {
     try {
@@ -46,12 +57,14 @@ function getDetailedCartItems() {
             const product = productsById[raw.id];
             if (!product) return null;
 
+            const normalizedImg = pathTo((product.imageUrl || '').replace(/^\.?\//, ''));
+
             return {
                 id: raw.id,
                 quantity: Number(raw.quantity) || 0,
                 name: product.name,
                 price: Number(product.price),
-                imageUrl: product.imageUrl,
+                imageUrl: normalizedImg,
                 color: product.color,
                 size: product.size
             };
@@ -244,7 +257,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (continueBtn) {
         continueBtn.addEventListener("click", function () {
-            window.location.href = "../html/catalog.html";
+            window.location.href = pathTo("html/catalog.html");
         });
     }
 
