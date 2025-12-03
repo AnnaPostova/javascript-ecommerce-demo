@@ -1,14 +1,6 @@
-(function () {
-    function getBasePrefix() {
-    const isGh = location.hostname.endsWith('github.io');
-    if (!isGh) return '';
-    const [, repo] = location.pathname.split('/');
-    return repo ? `/${repo}/` : '/';
-    }
-    const BASE = getBasePrefix();
-    const pathTo = (p) => `${BASE}${String(p).replace(/^\/+/, '')}`.replace(/\/{2,}/g, '/');
-    const clean = (p) => String(p || '').replace(/^\.?\//, '');
+import { pathTo, clean } from './path-utils.js';
 
+(function () {
     const PER_PAGE = 12;
 
     let allProducts = [];
@@ -226,7 +218,7 @@
             li.className = "sidebar-product";
             li.innerHTML = `
                 <article class="sidebar-product__inner">
-                    <a href="../html/product-details.html?id=${product.id}"
+                    <a href="${pathTo(`html/product-details.html?id=${product.id}`)}"
                         class="sidebar-product__link"
                         aria-label="${product.name}">
                         <figure class="sidebar-product__media">

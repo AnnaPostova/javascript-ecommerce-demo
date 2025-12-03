@@ -1,3 +1,5 @@
+import { pathTo, clean } from './path-utils.js';
+
 function initActiveNavItem() {
     const currentPage = document.body.dataset.page;
     if (!currentPage) return;
@@ -137,15 +139,6 @@ function injectCatalogFilters() {
         filterContainer.innerHTML = filterHTML;
     }
 }
-
-function getBasePrefix() {
-  const isGh = location.hostname.endsWith('github.io');
-  if (!isGh) return '';
-  const [, repo] = location.pathname.split('/');
-  return repo ? `/${repo}/` : '/';
-}
-const BASE = getBasePrefix();
-const pathTo = (p) => `${BASE}${p}`.replace(/\/{2,}/g, '/');
 
 // ========== Header / Footer / Offer Banner ==========
 function renderHeader() {
@@ -456,7 +449,7 @@ function createProductCard(product) {
                         ? "<span class='product-card__tag' aria-label='On sale'>Sale</span>"
                         : ""
                 }
-                <img src="${pathTo(product.imageUrl.replace(/^\.?\//, ''))}" alt="${product.name}">
+                <img src="${pathTo(clean(product.imageUrl))}" alt="${product.name}">
             </figure>
             <div class="product-card__description">
                 <h3 class="product-card__name">${product.name}</h3>

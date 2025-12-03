@@ -1,5 +1,7 @@
+import { pathTo, clean } from './path-utils.js';
+
 (function () {
-    const DATA_URL = "../assets/data.json";
+    const DATA_URL = pathTo("assets/data.json");
 
     let currentProduct = null;
 
@@ -68,7 +70,7 @@
 
         if (nameEl) nameEl.textContent = product.name;
         if (imgEl) {
-            imgEl.src = product.imageUrl;
+            imgEl.src = pathTo(clean(product.imageUrl));
             imgEl.alt = product.name;
         }
         if (priceEl) priceEl.textContent = `$${product.price}`;
@@ -184,7 +186,7 @@
                     id: currentProduct.id,
                     name: currentProduct.name,
                     price: currentProduct.price,
-                    imageUrl: currentProduct.imageUrl,
+                    imageUrl: pathTo(clean(currentProduct.imageUrl)),
                     quantity
                 });
             }

@@ -1,20 +1,11 @@
+import { pathTo, clean } from './path-utils.js';
+
+const DATA_URL = pathTo("assets/data.json");
 const SHIPPING_RATE = 30;
 const DISCOUNT_LIMIT = 3000;
 
 let productsById = {};
 let cartItems = [];
-
-
-function getBasePrefix() {
-  const isGh = location.hostname.endsWith('github.io');
-  if (!isGh) return '';
-  const [, repo] = location.pathname.split('/');
-  return repo ? `/${repo}/` : '/';
-}
-const BASE = getBasePrefix();
-const pathTo = (p) => `${BASE}${String(p).replace(/^\/+/, '')}`.replace(/\/{2,}/g, '/');
-
-const DATA_URL = pathTo("assets/data.json");
 
 async function loadProducts() {
     try {
@@ -57,7 +48,7 @@ function getDetailedCartItems() {
             const product = productsById[raw.id];
             if (!product) return null;
 
-            const normalizedImg = pathTo((product.imageUrl || '').replace(/^\.?\//, ''));
+            const normalizedImg = pathTo(clean(product.imageUrl));
 
             return {
                 id: raw.id,
