@@ -1,4 +1,4 @@
-const DATA_URL = "/src/assets/data.json";
+const DATA_URL = "assets/data.json";
 const SHIPPING_RATE = 30;
 const DISCOUNT_LIMIT = 3000;
 
@@ -244,9 +244,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (continueBtn) {
         continueBtn.addEventListener("click", function () {
-            window.location.href = "/src/html/catalog.html";
+            window.location.href = "html/catalog.html";
         });
     }
 
     renderCart();
 });
+
